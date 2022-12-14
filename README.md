@@ -16,5 +16,10 @@ e) Node v18.12.1
 f) Angular v15.0.2
 
 
+#License
+
+The MediCare application is released under BSD-3-Clause license.
+
+
 
 
