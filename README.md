@@ -1,6 +1,7 @@
 # Spring Boot - Angular Capstone Project [Domain: Healthcare, Application: MediCare]
 
-MediCare is a Spring Boot application built using Maven - Java - Angular.
+MediCare is a Spring Boot application built using Maven - Java - Angular. 
+Creating a dynamic and responsive Java e-healthcare web application for online ordering of medicines of different categories.
 
 # Working with MediCare in your IDE.
 
