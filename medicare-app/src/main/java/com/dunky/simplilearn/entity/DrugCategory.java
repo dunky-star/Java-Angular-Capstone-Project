@@ -21,5 +21,5 @@ public class DrugCategory {
     private String categoryName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<Drugs> drugs;
+    private Set<Drug> drug;
 }

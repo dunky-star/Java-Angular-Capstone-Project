@@ -13,7 +13,7 @@ import java.util.Date;
 @Table(name="drugs")
 @Getter
 @Setter
-public class Drugs {
+public class Drug {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
