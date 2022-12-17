@@ -5,16 +5,16 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th>dateCreated</th>
-          <th>unitPrice</th>
+          <th>Unit Price</th>
+          <th>Date Added</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let tempdrug of drugs">
           <td>{{tempdrug.name}} </td>
           <td>{{tempdrug.description}} </td>
-          <td>{{tempdrug.dateCreated | date: 'fullDate'}} </td>
           <td>{{tempdrug.unitPrice | currency: 'UGX'}} </td>
+          <td>{{tempdrug.dateCreated | date: 'fullDate'}} </td>
 
         </tr>
 
