@@ -3,6 +3,7 @@
     <table class="table table-bordered table-striped">
       <thead class="table-dark">
         <tr>
+          <th></th>
           <th>Name</th>
           <th>Description</th>
           <th>Unit Price</th>
@@ -11,6 +12,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let tempdrug of drugs">
+          <td>
+           <img src="{{tempdrug.imageUrl}}" />
+          </td>
           <td>{{tempdrug.name}} </td>
           <td>{{tempdrug.description}} </td>
           <td>{{tempdrug.unitPrice | currency: 'UGX'}} </td>
