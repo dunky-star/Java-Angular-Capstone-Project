@@ -1,1 +1,3 @@
-<p>drug-list works!</p>
+<p *ngFor="let tempdrug of drugs">
+  {{ tempdrug.name }}: {{ tempdrug.unitPrice | currency:'UGX' }}
+</p>
