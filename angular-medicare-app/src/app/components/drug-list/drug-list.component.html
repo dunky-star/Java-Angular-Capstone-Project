@@ -7,6 +7,7 @@
           <th>Name</th>
           <th>Description</th>
           <th>Unit Price</th>
+          <th>Stock</th>
           <th>Date Added</th>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <td>{{tempdrug.name}} </td>
           <td>{{tempdrug.description}} </td>
           <td>{{tempdrug.unitPrice | currency: 'UGX'}} </td>
+          <td>{{tempdrug.unitsInStock}} </td>
           <td>{{tempdrug.dateCreated | date: 'fullDate'}} </td>
 
         </tr>
