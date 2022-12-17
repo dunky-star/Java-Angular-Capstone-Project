@@ -1,3 +1,24 @@
-<p *ngFor="let tempdrug of drugs">
-  {{ tempdrug.name }}: {{ tempdrug.unitPrice | currency:'UGX' }}
-</p>
+<section id="section3" class="section">
+  <div class="wrap">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>dateCreated</th>
+          <th>unitPrice</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tempdrug of drugs">
+          <td>{{tempdrug.name}} </td>
+          <td>{{tempdrug.description}} </td>
+          <td>{{tempdrug.dateCreated | date: 'fullDate'}} </td>
+          <td>{{tempdrug.unitPrice | currency: 'UGX'}} </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>

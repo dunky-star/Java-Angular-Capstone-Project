@@ -22,7 +22,6 @@ export class DrugService {
 
 }
 
-
 interface GetResponse {
   _embedded: {
     drugs: Drug[];
