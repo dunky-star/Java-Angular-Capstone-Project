@@ -1,6 +1,6 @@
 /*
  * ----------------------------
- * Global CSS
+ * Common CSS
  * ----------------------------
  */
 
@@ -144,7 +144,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
  */
 
 .header-desktop {
-  background: linear-gradient(#E4F2B9, #B7E953);
+  background: #0da8e4;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -733,7 +733,7 @@ select {
  */
 
 .table {
-  margin-top: 20px
+  margin: 0
 }
 
 table.table.table-bordered {
@@ -747,7 +747,7 @@ table.table.table-bordered {
 }
 
 table.table.table-bordered th {
-  BACKGROUND: #381F1E;
+  BACKGROUND: linear-gradient(#E5F2BB, #B7E952);
   color: #fff;
   font-size: 14px;
   padding: 7px
