@@ -144,7 +144,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
  */
 
 .header-desktop {
-  background: #0da8e4;
+  background: linear-gradient(#E5F2BB, #B7E952);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -747,7 +747,7 @@ table.table.table-bordered {
 }
 
 table.table.table-bordered th {
-  BACKGROUND: linear-gradient(#E5F2BB, #B7E952);
+  background: #381F1E;
   color: #fff;
   font-size: 14px;
   padding: 7px
