@@ -144,7 +144,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
  */
 
 .header-desktop {
-  background: #0da8e4;
+  background: linear-gradient(#E4F2B9, #B7E953);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -733,7 +733,7 @@ select {
  */
 
 .table {
-  margin: 0
+  margin-top: 20px
 }
 
 table.table.table-bordered {
@@ -824,11 +824,11 @@ a.primary-btn:hover {
  */
 
 footer ul li a {
-  color: #fff
+  color: #333
 }
 
 footer {
-  background: #232324;
+  background: linear-gradient(#E5F2BB, #B7E952);
   z-index: 1;
   position: relative;
   text-align: center
