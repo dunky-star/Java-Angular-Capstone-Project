@@ -21,8 +21,7 @@ p {
 }
 
 img {
-  border: 4px solid #fff;
-  height: 120px;
-  width: 120px;
+  border: 4px solid #381F1E;
+
   /**float: left;*/
 }
