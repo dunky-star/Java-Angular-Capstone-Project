@@ -1,30 +1,20 @@
-<section id="section3" class="section">
-  <div class="wrap">
-    <table class="table table-bordered table-striped">
-      <thead class="table-dark">
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Unit Price</th>
-          <th>Stock</th>
-          <th>Date Added</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let tempdrug of drugs">
-          <td>
-           <img src="{{tempdrug.imageUrl}}" />
-          </td>
-          <td>{{tempdrug.name}} </td>
-          <td>{{tempdrug.description}} </td>
-          <td>{{tempdrug.unitPrice | currency: 'UGX'}} </td>
-          <td>{{tempdrug.unitsInStock}} </td>
-          <td>{{tempdrug.dateCreated | date: 'fullDate'}} </td>
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
 
-        </tr>
+        <!-- Loop over the collection of products -->
+        <div *ngFor="let tempDrug of drugs" class="col-md-3">
 
-      </tbody>
-    </table>
+          <div class="product-box">
+            <img src="{{ tempDrug.imageUrl }}" class="img-responsive">
+            <h1>{{ tempDrug.name }}</h1>
+            <div class="price">{{ tempDrug.unitPrice | currency:'UGX' }}</div>
+            <a href="#" class="primary-btn">Add to cart</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

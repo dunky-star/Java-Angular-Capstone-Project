@@ -4,15 +4,6 @@ body {
   font-family: 'Bellefair', serif;
 }
 
-.wrap {
-  background-color: rgb(200, 200, 200);
-  background-color: rgba(200, 200, 200, 0.9);
-  text-align: justify;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 40px auto;
-  width: 70%;
-}
 
 p {
   text-align: justify;
@@ -20,6 +11,6 @@ p {
 }
 
 img {
-border: 4px solid #333;
+border: 4px solid #fff;
   /**float: left;*/
 }
