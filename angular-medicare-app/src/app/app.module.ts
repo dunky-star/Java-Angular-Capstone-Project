@@ -7,8 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DrugService } from './services/drug.service';
 import { Routes, RouterModule} from '@angular/router';
 import { DrugCategoryMenuComponent } from './components/drug-category-menu/drug-category-menu.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
+  {path: 'search/:keyword', component: DrugListComponent},
   {path: 'category/:id', component: DrugListComponent},
   {path: 'category', component: DrugListComponent},
   {path: 'drugs', component: DrugListComponent},
@@ -20,7 +22,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     DrugListComponent,
-    DrugCategoryMenuComponent
+    DrugCategoryMenuComponent,
+    SearchComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

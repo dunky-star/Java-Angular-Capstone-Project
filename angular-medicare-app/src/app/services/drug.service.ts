@@ -38,6 +38,18 @@ export class DrugService {
     );
   }
 
+
+    searchDrugs(theKeyword: string): Observable<Drug[]> {
+
+    // We need to build URL based on the keyword
+    const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
+
+    return this.httpClient.get<GetResponseDrug>(searchUrl).pipe(
+    map(response => response._embedded.drugs)
+    );
+  }
+
+
 }
 
 interface GetResponseDrug {
