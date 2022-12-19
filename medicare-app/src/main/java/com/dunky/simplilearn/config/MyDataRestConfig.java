@@ -23,7 +23,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     // To expose entity ids for Search functionality.
     @Autowired
     public MyDataRestConfig(EntityManager theEntityManager) {
-        entityManager = theEntityManager;
+        this.entityManager = theEntityManager;
     }
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {

@@ -6,6 +6,7 @@ import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DrugService } from './services/drug.service';
 import { Routes, RouterModule} from '@angular/router';
+import { DrugCategoryMenuComponent } from './components/drug-category-menu/drug-category-menu.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: DrugListComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    DrugListComponent
+    DrugListComponent,
+    DrugCategoryMenuComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
