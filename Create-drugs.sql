@@ -44,33 +44,53 @@ ENGINE=InnoDB;
 INSERT INTO drug_category(category_name) VALUES ('Antibacterials');
 INSERT INTO drug_category(category_name) VALUES ('Bronchodilators');
 INSERT INTO drug_category(category_name) VALUES ('Antifungals');
+INSERT INTO drug_category(category_name) VALUES ('Hormonal');
+INSERT INTO drug_category(category_name) VALUES ('Other medicines');
 
 INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
 unit_price, category_id, date_created)
 VALUES ('Anti-bac-001', 'Vancomysin', 'Vancomycin is a glycopeptide antibiotic medication used to treat a number of bacterial infections. It is recommended intravenously as a treatment for complicated skin infections',
 'assets/images/products/capsules.png'
-,1,100,19.99,1, NOW());
+,1,2000,10000,1, NOW());
 
 INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
 unit_price, category_id, date_created)
 VALUES ('Bron-cho-001', 'Tiotropium bromide', 'Is a long-acting bronchodilator used in the management of chronic obstructive pulmonary disease and asthma',
 'assets/images/products/tricopium.png'
-,1,100,29.99,1, NOW());
+,1,300,25000,2, NOW());
 
 INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
 unit_price, category_id, date_created)
 VALUES ('Anti-fung-001', 'Miconazole', ' is an antifungal medication used to treat ring worm, pityriasis versicolor, and yeast infections of the skin',
 'assets/images/products/miconazole.png'
-,1,100,24.99,1, NOW());
+,1,5000,50000,3, NOW());
 
 INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
 unit_price, category_id, date_created)
 VALUES ('Anti-bac-002', 'Turmeric', 'Turmeric contains curcumin, which is known for its powerful antioxidant and anti-inflammatory properties.',
 'assets/images/products/antibac1.png'
-,1,100,29.99,1, NOW());
+,1,1500,80000,1, NOW());
 
 INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
 unit_price, category_id, date_created)
 VALUES ('Bron-cho-002', 'Thoracic drug', 'Thoracic medicine looks after diseases that involve the lung, the lining of the lung and sometimes the chest wall itself.',
 'assets/images/products/thoracic.png'
-,1,100,24.99,1, NOW());
+,1,4000,45000,2, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Hor-mon-001', 'drospirenone', 'Drospirenone is a progestin and antiandrogen medication which is used in birth control pills to prevent pregnancy and in menopausal hormone therapy, among other uses.',
+'assets/images/products/drospirenone.png'
+,1,900,42000,4, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Hor-mon-002', 'norethindrone acetate', 'This medicine is used to treat endometriosis, uterine bleeding caused by abnormal hormone levels, and secondary amenorrhea.',
+'assets/images/products/norethindrone.png'
+,1,1500,100000,4, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Oth-med-001', 'Coartem', 'Lumefantrine, sold under the trade name Coartem among others, is a combination of the two medications artemether and lumefantrine. It is used to treat malaria caused by Plasmodium falciparum that is not treatable with chloroquine.',
+'assets/images/products/coartem.png'
+,1,10000,80000,5, NOW());
