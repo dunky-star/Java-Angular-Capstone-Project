@@ -5,6 +5,15 @@ import { AppComponent } from './app.component';
 import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DrugService } from './services/drug.service';
+import { Routes, RouterModule} from '@angular/router';
+
+const routes: Routes = [
+  {path: 'category/:id', component: DrugListComponent},
+  {path: 'category', component: DrugListComponent},
+  {path: 'drugs', component: DrugListComponent},
+  {path: '', redirectTo: '/drugs', pathMatch: 'full'},
+  {path: '**', redirectTo: '/drugs', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
@@ -12,7 +21,9 @@ import { DrugService } from './services/drug.service';
     DrugListComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    RouterModule.forRoot(routes),
+    BrowserModule,
+     HttpClientModule
   ],
   providers: [DrugService],
   bootstrap: [AppComponent]
