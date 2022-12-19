@@ -12,7 +12,10 @@
             <div class="price">{{ tempDrug.unitPrice | currency:'UGX' }}</div>
             <a href="#" class="primary-btn">Add to cart</a>
           </div>
-
+        </div>
+          <!-- if products empty then display a message-->
+        <div *ngIf="drugs?.length == 0" class="alert alert-warning col-md-12" role="alert">
+          No medicine found.
         </div>
       </div>
     </div>
