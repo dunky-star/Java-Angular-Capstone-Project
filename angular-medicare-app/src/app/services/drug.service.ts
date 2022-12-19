@@ -15,7 +15,11 @@ export class DrugService {
   constructor(private httpClient: HttpClient) { }
 
   getDrugList(theCategoryId: number): Observable<Drug[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
+
+     // We need to build URL based on category id for Search drugs by category.
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
+
+    return this.httpClient.get<GetResponse>(searchUrl).pipe(
     map(response => response._embedded.drugs)
     );
   }
