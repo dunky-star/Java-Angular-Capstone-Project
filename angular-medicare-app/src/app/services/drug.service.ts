@@ -14,7 +14,7 @@ export class DrugService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getDrugList(): Observable<Drug[]> {
+  getDrugList(theCategoryId: number): Observable<Drug[]> {
     return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
     map(response => response._embedded.drugs)
     );
