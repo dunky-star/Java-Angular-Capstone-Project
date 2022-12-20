@@ -21,6 +21,8 @@ export class DrugListComponent implements OnInit{
   thePageSize: number = 5;
   theTotalElements: number = 0;
 
+   previousKeyword: string = "";
+
 
   // Perform dependency injection of DrugService here so that Drug component can use the REST API.
   constructor(private drugService: DrugService,
@@ -45,14 +47,24 @@ export class DrugListComponent implements OnInit{
 
   }
   handleSearchDrugs() {
-      const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
+    const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
+
+    // if we have a different keyword than previous
+    // then set thePageNumber to 1
+
+    if (this.previousKeyword != theKeyword) {
+      this.thePageNumber = 1;
+    }
+
+    this.previousKeyword = theKeyword;
+
+    console.log(`keyword=${theKeyword}, thePageNumber=${this.thePageNumber}`);
 
     // now search for the products using keyword
-    this.drugService.searchDrugs(theKeyword).subscribe(
-      data => {
-        this.drugs = data;
-      }
-    )
+    this.drugService.searchDrugsPaginate(this.thePageNumber - 1,
+                                         this.thePageSize,
+                                        theKeyword).subscribe(this.processResult());
+
   }
 
   handleListDrugs() {
@@ -86,7 +98,7 @@ export class DrugListComponent implements OnInit{
 
      // now get the drugs for the given category id
      // now get the products for the given category id
-    this.drugService.getDrugListPaginate(this.thePageNumber - 1,
+    this.drugService.getDrugsListPaginate(this.thePageNumber - 1,
                                          this.thePageSize,
                                          this.currentCategoryId)
                                                .subscribe(
@@ -103,6 +115,15 @@ export class DrugListComponent implements OnInit{
     this.thePageSize = +pageSize;
     this.thePageNumber = 1;
     this.listDrugs();
+  }
+
+  processResult() {
+    return (data: any) => {
+      this.drugs = data._embedded.drugs;
+      this.thePageNumber = data.page.number + 1;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    };
   }
 
 

@@ -41,8 +41,8 @@ export class DrugService {
     );
   }
 
-  // For pagination support
-  getDrugListPaginate(thePage: number,
+  // For pagination support home page
+  getDrugsListPaginate(thePage: number,
                       thePageSize: number,
                       theCategoryId: number): Observable<GetResponseDrug> {
 
@@ -71,6 +71,20 @@ export class DrugService {
     return this.httpClient.get<GetResponseDrug>(searchUrl).pipe(
     map(response => response._embedded.drugs)
     );
+  }
+
+
+  // For pagination support Search on keyword, page and size.
+  searchDrugsPaginate(thePage: number,
+                         thePageSize: number,
+                         theKeyword: string): Observable<GetResponseDrug> {
+
+     // We need to build URL based on category id for Search drugs by category.
+    const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`
+                        + `&page=${thePage}&size=${thePageSize}`;;
+
+    return this.httpClient.get<GetResponseDrug>(searchUrl);
+
   }
 
 
