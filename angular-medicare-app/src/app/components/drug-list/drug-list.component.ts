@@ -13,7 +13,14 @@ export class DrugListComponent implements OnInit{
   // An array of Drug.
   drugs: Drug[] = [];
   currentCategoryId: number =1;
+  previousCategoryId: number =1;
   searchMode: boolean = false;
+
+  // new properties for pagination
+  thePageNumber: number = 1;
+  thePageSize: number = 10;
+  theTotalElements: number = 0;
+
 
   // Perform dependency injection of DrugService here so that Drug component can use the REST API.
   constructor(private drugService: DrugService,
@@ -50,7 +57,7 @@ export class DrugListComponent implements OnInit{
 
   handleListDrugs() {
 
-           // check if "id" parameter is available
+    // check if "id" parameter is available
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
     if (hasCategoryId) {
@@ -62,13 +69,34 @@ export class DrugListComponent implements OnInit{
       this.currentCategoryId = 1;
     }
 
-     // now get the products for the given category id
-    this.drugService.getDrugList(this.currentCategoryId).subscribe(
-      data => {
-        this.drugs = data;
-      }
-    )
 
+     /**
+      * Check if we have a different category than previous
+      * NB: Angular will reuse a component if it is currently being viewed
+      * if we have a different category id than previous
+      * then set thePageNumber back to 1
+     */
+    if (this.previousCategoryId != this.currentCategoryId) {
+      this.thePageNumber = 1;
+    }
+
+    this.previousCategoryId = this.currentCategoryId;
+
+    console.log(`currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
+
+     // now get the drugs for the given category id
+     // now get the products for the given category id
+    this.drugService.getDrugListPaginate(this.thePageNumber - 1,
+                                         this.thePageSize,
+                                         this.currentCategoryId)
+                                               .subscribe(
+                                                data => {
+                                                  this.drugs = data._embedded.drugs;
+                                                  this.thePageNumber = data.page.number + 1;
+                                                  this.thePageSize = data.page.size;
+                                                  this.theTotalElements = data.page.totalElements;
+                                                }
+                                               );
   }
 
 }
