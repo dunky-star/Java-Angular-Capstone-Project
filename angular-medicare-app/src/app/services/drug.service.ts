@@ -20,6 +20,17 @@ export class DrugService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+
+  getDrugDetails(theDrugId: number): Observable<Drug> {
+
+    // We need to build the URL based on product id
+    const drugUrl = `${this.baseUrl}/${theDrugId}`;
+
+    return this.httpClient.get<Drug>(drugUrl);
+  }
+
+
   getDrugList(theCategoryId: number): Observable<Drug[]> {
 
      // We need to build URL based on category id for Search drugs by category.

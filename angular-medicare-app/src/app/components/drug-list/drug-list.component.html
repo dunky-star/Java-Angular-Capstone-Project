@@ -7,8 +7,16 @@
         <div *ngFor="let tempDrug of drugs" class="col-md-3">
 
           <div class="product-box">
-            <img src="{{ tempDrug.imageUrl }}" class="img-responsive">
-            <h1>{{ tempDrug.name }}</h1>
+
+            <!-- For product detail view page -->
+            <a routerLink="/drugs/{{ tempDrug.id }}">
+              <img src="{{ tempDrug.imageUrl }}" class="img-responsive">
+            </a>
+            <!-- For product detail view page -->
+            <a routerLink="/drugs/{{ tempDrug.id }}">
+              <h1>{{ tempDrug.name }}</h1>
+            </a>
+
             <div class="price">{{ tempDrug.unitPrice | currency:'UGX' }}</div>
             <a href="#" class="primary-btn">Add to cart</a>
           </div>

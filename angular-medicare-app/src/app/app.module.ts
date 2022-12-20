@@ -8,8 +8,11 @@ import { DrugService } from './services/drug.service';
 import { Routes, RouterModule} from '@angular/router';
 import { DrugCategoryMenuComponent } from './components/drug-category-menu/drug-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
+import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
+
 
 const routes: Routes = [
+  {path: 'drugs/:id', component: DrugDetailsComponent},
   {path: 'search/:keyword', component: DrugListComponent},
   {path: 'category/:id', component: DrugListComponent},
   {path: 'category', component: DrugListComponent},
@@ -23,8 +26,9 @@ const routes: Routes = [
     AppComponent,
     DrugListComponent,
     DrugCategoryMenuComponent,
-    SearchComponent
-  ],
+    SearchComponent,
+    DrugDetailsComponent
+     ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,

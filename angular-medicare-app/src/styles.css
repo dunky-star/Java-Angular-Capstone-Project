@@ -1,6 +1,6 @@
 /*
  * ----------------------------
- * Common CSS
+ * Common CSS - App Global CSS
  * ----------------------------
  */
 
@@ -144,7 +144,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
  */
 
 .header-desktop {
-  background: linear-gradient(#E5F2BB, #B7E952);
+  background: #0da8e4;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -747,7 +747,7 @@ table.table.table-bordered {
 }
 
 table.table.table-bordered th {
-  background: #381F1E;
+  BACKGROUND: #0da8e4;
   color: #fff;
   font-size: 14px;
   padding: 7px
@@ -781,6 +781,10 @@ table.table.table-bordered th {
 
 .detail-section {
   margin-top: 60px
+}
+
+.detail-img {
+  width: 30%;
 }
 
 /**/
@@ -824,11 +828,11 @@ a.primary-btn:hover {
  */
 
 footer ul li a {
-  color: #333
+  color: #fff
 }
 
 footer {
-  background: linear-gradient(#E5F2BB, #B7E952);
+  background: #232324;
   z-index: 1;
   position: relative;
   text-align: center
