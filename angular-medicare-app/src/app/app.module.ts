@@ -9,6 +9,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { DrugCategoryMenuComponent } from './components/drug-category-menu/drug-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
 import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-     HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [DrugService],
   bootstrap: [AppComponent]

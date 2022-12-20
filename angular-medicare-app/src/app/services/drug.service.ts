@@ -41,6 +41,19 @@ export class DrugService {
     );
   }
 
+  // For pagination support
+  getDrugListPaginate(thePage: number,
+                      thePageSize: number,
+                      theCategoryId: number): Observable<GetResponseDrug> {
+
+     // We need to build URL based on category id for Search drugs by category.
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`
+                        + `&page=${thePage}&size=${thePageSize}`;;
+
+    return this.httpClient.get<GetResponseDrug>(searchUrl);
+
+  }
+
 
   getDrugCategories(): Observable<DrugCategory[]> {
 
@@ -66,6 +79,12 @@ export class DrugService {
 interface GetResponseDrug {
   _embedded: {
     drugs: Drug[];
+  },
+  page: {
+    size: number,
+    totalElements: number,
+    totalPages: number,
+    number: number
   }
 }
 
