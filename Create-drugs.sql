@@ -94,3 +94,56 @@ unit_price, category_id, date_created)
 VALUES ('Oth-med-001', 'Coartem', 'Lumefantrine, sold under the trade name Coartem among others, is a combination of the two medications artemether and lumefantrine. It is used to treat malaria caused by Plasmodium falciparum that is not treatable with chloroquine.',
 'assets/images/products/coartem.png'
 ,1,10000,80000,5, NOW());
+
+
+**************************
+
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-007', 'Penicillins', 'Penicillins are distributed rapidly in the extracellular fluid of most tissues, particularly when inflammation is present.',
+'assets/images/products/disinfectant.png'
+,1,2000,10000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-003', 'Amoxicillin', 'Amoxicillin has generally replaced ampicillin for oral use because amoxicillin is absorbed better, has fewer gastrointestinal effects, and can be given less frequently.',
+'assets/images/products/disinfectant.png'
+,1,300,25000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-004', 'Ampicillin', ' is an antifungal medication used to treat ring worm, pityriasis versicolor, and yeast infections of the skin',
+'assets/images/products/disinfectant.png'
+,1,5000,50000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-005', 'Carbapenems', 'Carbapenems are parenteral bactericidal beta-lactam antibiotics that have an extremely broad spectrum.',
+'assets/images/products/disinfectant.png'
+,1,1500,80000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-006', 'Monobactams', 'Aztreonam is currently the only available monobactam. Aztreonam has activity similar to that of ceftazidime against pneumoniae carbapenemase.',
+'assets/images/products/disinfectant.png'
+,1,4000,45000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-008', 'Aminoglycosides', 'Aminoglycosides are active against most gram-negative aerobic and facultative anaerobic bacilli.',
+'assets/images/products/disinfectant.png'
+,1,900,42000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-009', 'Daptomycin', 'Daptomycin is used mainly for infections caused by Vancomycin- and methicillin-resistant Staphylococcus aureus.',
+'assets/images/products/disinfectant.png'
+,1,1500,100000,1, NOW());
+
+INSERT INTO drugs (sku, name, description, image_url, active, units_in_stock,
+unit_price, category_id, date_created)
+VALUES ('Anti-bac-010', 'Fosfomycin', 'Fosfomycin has a broad spectrum of activity against both gram-positive and gram-negative organisms, including many antibiotic-resistant organisms.',
+'assets/images/products/disinfectant.png'
+,1,10000,80000,1, NOW());
+
