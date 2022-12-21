@@ -2,6 +2,8 @@ import { Drug } from 'src/app/common/drug';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DrugService } from 'src/app/services/drug.service';
+import { CartItem } from 'src/app/common/cart-item';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-drug-details',
@@ -13,6 +15,7 @@ export class DrugDetailsComponent implements OnInit {
   drug: Drug = new Drug();
 
   constructor(private drugService: DrugService,
+              private cartService: CartService,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -31,6 +34,14 @@ export class DrugDetailsComponent implements OnInit {
         this.drug = data;
       }
     )
+  }
+
+  addToCart() {
+
+    console.log(`Adding to cart: ${this.drug.name}, ${this.drug.unitPrice}`);
+    const theCartItem = new CartItem(this.drug);
+    this.cartService.addToCart(theCartItem);
+
   }
 
 }
