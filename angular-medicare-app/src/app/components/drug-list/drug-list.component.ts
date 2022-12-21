@@ -2,6 +2,8 @@ import { DrugService } from './../../services/drug.service';
 import { Component, OnInit } from '@angular/core';
 import { Drug } from 'src/app/common/drug';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+import { CartItem } from 'src/app/common/cart-item';
 
 
 @Component({
@@ -10,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./drug-list.component.css']
 })
 export class DrugListComponent implements OnInit{
+
   // An array of Drug.
   drugs: Drug[] = [];
   currentCategoryId: number =1;
@@ -25,7 +28,9 @@ export class DrugListComponent implements OnInit{
 
 
   // Perform dependency injection of DrugService here so that Drug component can use the REST API.
-  constructor(private drugService: DrugService,
+  constructor(
+    private drugService: DrugService,
+    private cartService: CartService,
     private route: ActivatedRoute){
 
   }
@@ -124,6 +129,13 @@ export class DrugListComponent implements OnInit{
       this.thePageSize = data.page.size;
       this.theTotalElements = data.page.totalElements;
     };
+  }
+
+  addToCart(theDrug: Drug) {
+    console.log(`Adding to cart: ${theDrug.name}, ${theDrug.unitPrice}`);
+    const theCartItem = new CartItem(theDrug);
+
+    this.cartService.addToCart(theCartItem);
   }
 
 

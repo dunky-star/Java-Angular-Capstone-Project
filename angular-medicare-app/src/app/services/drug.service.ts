@@ -76,8 +76,8 @@ export class DrugService {
 
   // For pagination support Search on keyword, page and size.
   searchDrugsPaginate(thePage: number,
-                         thePageSize: number,
-                         theKeyword: string): Observable<GetResponseDrug> {
+                      thePageSize: number,
+                      theKeyword: string): Observable<GetResponseDrug> {
 
      // We need to build URL based on category id for Search drugs by category.
     const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`
