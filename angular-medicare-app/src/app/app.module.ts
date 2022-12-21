@@ -10,6 +10,7 @@ import { DrugCategoryMenuComponent } from './components/drug-category-menu/drug-
 import { SearchComponent } from './components/search/search.component';
 import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
     DrugListComponent,
     DrugCategoryMenuComponent,
     SearchComponent,
-    DrugDetailsComponent
+    DrugDetailsComponent,
+    CartStatusComponent
      ],
   imports: [
     RouterModule.forRoot(routes),
