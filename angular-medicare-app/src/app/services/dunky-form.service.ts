@@ -10,8 +10,8 @@ import { State } from '../common/state';
 export class DunkyFormService {
 
   // Country and State URLs for populating Shipping and Billing address form.
-  private countriesUrl = 'http://localhost:8080/api/countries';
-  private statesUrl = 'http://localhost:8080/api/states';
+  private countriesUrl = 'http://localhost:8585/api/countries';
+  private statesUrl = 'http://localhost:8585/api/states';
 
   constructor(private httpClient: HttpClient) { }
 

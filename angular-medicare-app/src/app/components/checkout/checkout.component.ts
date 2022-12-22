@@ -97,9 +97,15 @@ export class CheckoutComponent implements OnInit {
     if (event.target.checked) {
       this.checkoutFormGroup.controls.billingAddress
             .setValue(this.checkoutFormGroup?.controls.shippingAddress.value);
+
+      //To handle setting billing address as shipping address during checkout.
+      this.billingAddressStates = this.shippingAddressStates;
     }
     else {
       this.checkoutFormGroup.controls.billingAddress.reset();
+
+      //To handle setting billing address as shipping address during checkout.
+      this.billingAddressStates = [];
     }
 
 }
@@ -140,10 +146,10 @@ export class CheckoutComponent implements OnInit {
 
   getStates(formGroupName: string) {
 
-    const formGroup = this.checkoutFormGroup.get(formGroupName)!;
+    const formGroup = this.checkoutFormGroup.get(formGroupName);
 
-    const countryCode = formGroup.value.country.code;
-    const countryName = formGroup.value.country.name;
+    const countryCode = formGroup?.value.country.code;
+    const countryName = formGroup?.value.country.name;
 
     console.log(`${formGroupName} country code: ${countryCode}`);
     console.log(`${formGroupName} country name: ${countryName}`);
@@ -159,7 +165,7 @@ export class CheckoutComponent implements OnInit {
         }
 
         // select first item by default
-        formGroup.get('state')?.setValue(data[0]);
+        formGroup?.get('state')?.setValue(data[0]);
       }
     );
   }
