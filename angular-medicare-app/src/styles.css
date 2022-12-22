@@ -820,9 +820,9 @@ table.table.table-bordered th {
  */
 
 .btn-info {
-  color: #fff;
-  background-color: #0da8e4 !important;
-  border-color: #0da8e4 !important
+  color: #fff !important;
+  background-color: #381F1E !important;
+  border-color: #fff !important
 }
 
 a.primary-btn {
