@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Country } from 'src/app/common/country';
 import { State } from 'src/app/common/state';
+import { CartService } from 'src/app/services/cart.service';
 import { DunkyFormService } from 'src/app/services/dunky-form.service';
 import { DunkyCustomValidators } from 'src/app/validators/dunky-custom-validators';
 
@@ -27,7 +28,8 @@ export class CheckoutComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder,
-              private dunkyFormService: DunkyFormService) { }
+              private dunkyFormService: DunkyFormService,
+              private cartService: CartService) { }
 
   ngOnInit(): void {
 
@@ -136,7 +138,25 @@ export class CheckoutComponent implements OnInit {
       }
     );
 
+    // Review cart detail
+    this.reviewCartDetails()
+
   }
+
+  reviewCartDetails() {
+
+    // subscribe to cartService.totalQuantity
+    this.cartService.totalQuantity.subscribe(
+      totalQuantity => this.totalQuantity = totalQuantity
+    );
+
+    // subscribe to cartService.totalPrice
+    this.cartService.totalPrice.subscribe(
+      totalPrice => this.totalPrice = totalPrice
+    );
+
+  }
+
 
   // Getter methods for the form validation
   get firstName() { return this.checkoutFormGroup.get('customer.firstName'); }
@@ -177,7 +197,8 @@ export class CheckoutComponent implements OnInit {
       this.billingAddressStates = [];
     }
 
-}
+
+  }
 
 
   onSubmit() {
@@ -245,3 +266,5 @@ export class CheckoutComponent implements OnInit {
   }
 
 }
+
+
