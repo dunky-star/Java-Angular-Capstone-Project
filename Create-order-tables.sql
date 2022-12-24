@@ -70,9 +70,9 @@ CREATE TABLE `order_item` (
   `quantity` int DEFAULT NULL,
   `unit_price` decimal(19,2) DEFAULT NULL,
   `order_id` bigint DEFAULT NULL,
-  `product_id` bigint DEFAULT NULL,
+  `drug_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `K_order_id` (`order_id`),
   CONSTRAINT `FK_order_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
-  CONSTRAINT `FK_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
+  CONSTRAINT `FK_drug_id` FOREIGN KEY (`drug_id`) REFERENCES `drugs` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
