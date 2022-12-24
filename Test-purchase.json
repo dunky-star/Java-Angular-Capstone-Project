@@ -27,13 +27,13 @@
          "imageUrl":"assets/images/products/capsules.png",
          "quantity":2,
          "unitPrice":10000,
-         "productId":43
+         "drugId":43
       },
       {
          "imageUrl":"assets/images/products/coartem.png",
          "quantity":2,
          "unitPrice":80000,
-         "productId":50
+         "drugId":50
       }
    ]
 }
