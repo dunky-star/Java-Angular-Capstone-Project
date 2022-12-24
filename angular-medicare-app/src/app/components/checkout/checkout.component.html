@@ -147,12 +147,14 @@
                   {{ state.name }}
                 </option>
               </select>
+
                   <div *ngIf="shippingAddressState?.invalid && (shippingAddressState?.dirty || shippingAddressState?.touched)"
                     class="alert alert-danger mt-1">
                     <div *ngIf="shippingAddressState?.errors?.required">
                       State is required
                     </div>
                   </div>
+
             </div>
           </div>
         </div>
