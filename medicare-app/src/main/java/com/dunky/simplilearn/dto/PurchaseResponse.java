@@ -8,5 +8,5 @@ import lombok.Setter;
 @Getter
 public class PurchaseResponse {
     private final String orderTrackingNumber = null;
-    
+
 }
