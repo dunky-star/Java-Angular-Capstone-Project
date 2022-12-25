@@ -49,5 +49,4 @@ export class CartDetailsComponent implements OnInit {
   remove(theCartItem: CartItem) {
     this.cartService.remove(theCartItem);
   }
-
 }

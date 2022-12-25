@@ -132,8 +132,10 @@ export class DrugListComponent implements OnInit{
   }
 
   addToCart(theDrug: Drug) {
-    console.log(`Adding to cart: ${theDrug.name}, ${theDrug.unitPrice}`);
-    const theCartItem = new CartItem(theDrug);
+      console.log(`Adding to cart: ${theDrug.name}, ${theDrug.unitPrice}`);
+
+    // TODO ... do the real work
+    let theCartItem = new CartItem(theDrug.id, theDrug.name, theDrug.imageUrl, theDrug.unitPrice);
 
     this.cartService.addToCart(theCartItem);
   }

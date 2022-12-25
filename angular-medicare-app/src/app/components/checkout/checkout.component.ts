@@ -225,7 +225,8 @@ export class CheckoutComponent implements OnInit {
     const cartItems = this.cartService.cartItems;
 
     // create orderItems from cartItems the short way.
-    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
+    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem.imageUrl!, tempCartItem.unitPrice!, tempCartItem.quantity, tempCartItem.id!));
+
 
     // set up purchase
     let purchase = new Purchase();
@@ -278,7 +279,7 @@ export class CheckoutComponent implements OnInit {
     this.checkoutFormGroup.reset();
 
     // navigate back to the products page
-    this.router.navigateByUrl("/products");
+    this.router.navigateByUrl("/drugs");
   }
 
 
