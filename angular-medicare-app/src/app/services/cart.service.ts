@@ -12,8 +12,9 @@ cartItems: CartItem[] = [];
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
-  // To handle broswer refresh that removes items from Cart.
+  // To handle broswer refresh that removes items from Cart, either use sessionStorage or localStorage.
   storage: Storage = sessionStorage;
+  // storage: Storage = localStorage;
 
   constructor() {
 

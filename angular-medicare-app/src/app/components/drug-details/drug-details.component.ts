@@ -38,8 +38,6 @@ export class DrugDetailsComponent implements OnInit {
 
   addToCart() {
 
-
-
     console.log(`Adding to cart: ${this.drug.name}, ${this.drug.unitPrice}`);
     let theCartItem = new CartItem(this.drug.id, this.drug.name, this.drug.imageUrl, this.drug.unitPrice);
 

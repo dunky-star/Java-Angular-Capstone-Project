@@ -1,5 +1,3 @@
-import { Drug } from './drug';
-
 export class CartItem {
 
     constructor(public id?: string,

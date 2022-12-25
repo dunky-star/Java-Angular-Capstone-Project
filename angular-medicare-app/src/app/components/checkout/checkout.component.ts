@@ -282,8 +282,6 @@ export class CheckoutComponent implements OnInit {
     this.router.navigateByUrl("/drugs");
   }
 
-
-
   handleMonthsAndYears() {
 
     const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
