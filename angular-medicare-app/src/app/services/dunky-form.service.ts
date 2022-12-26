@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Country } from '../common/country';
 import { State } from '../common/state';
 
@@ -10,8 +11,8 @@ import { State } from '../common/state';
 export class DunkyFormService {
 
   // Country and State URLs for populating Shipping and Billing address form.
-  private countriesUrl = 'http://localhost:8585/api/countries';
-  private statesUrl = 'http://localhost:8585/api/states';
+  private countriesUrl = environment.medicareApiUrl + '/countries';
+  private statesUrl = environment.medicareApiUrl + '/states';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DrugCategory } from '../common/drug-category';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,10 @@ export class DrugService {
 
 
   // API call to the backend REST for Drugs
-  private baseUrl = 'http://localhost:8585/api/drugs';
+  private baseUrl = environment.medicareApiUrl + '/drugs';
 
    // API call to the backend REST for Drug Category
-  private categoryUrl = 'http://localhost:8585/api/drug-category';
+  private categoryUrl = environment.medicareApiUrl + '/drug-category';
 
   constructor(private httpClient: HttpClient) { }
 
