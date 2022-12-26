@@ -275,6 +275,9 @@ INSERT INTO `state` VALUES
 (220,'Van',5),
 (221,'Yalova',5),
 (222,'Yozgat',5),
-(223,'Zonguldak',5);
+(223,'Zonguldak',5),
+(256,'Kampala',256),
+(255,'Dar-es-Salaam',255),
+(254,'Nairobi',254);
 
 SET foreign_key_checks = 1;
