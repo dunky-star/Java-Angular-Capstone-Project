@@ -26,6 +26,20 @@ public class Customer {
     @Column(name="email")
     private String email;
 
+    @Column(name="username")
+    private String username;
+
+    @Column(name="password")
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name="role")
+    private Role role;
+
+    //Not persistent. There is no column on database table.
+    @Transient
+    private String token;
+
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Order> orders = new HashSet<>();
 
