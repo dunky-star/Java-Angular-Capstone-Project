@@ -7,10 +7,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="customer")
+@Table(name="user")
 @Getter
 @Setter
-public class Customer {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class Customer {
     @Transient
     private String token;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Order> orders = new HashSet<>();
 
     public void add(Order order) {
@@ -52,7 +52,7 @@ public class Customer {
             }
 
             orders.add(order);
-            order.setCustomer(this);
+            order.setUser(this);
         }
     }
 

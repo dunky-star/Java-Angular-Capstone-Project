@@ -1,7 +1,7 @@
 package com.dunky.simplilearn.dto;
 
 import com.dunky.simplilearn.entity.Address;
-import com.dunky.simplilearn.entity.Customer;
+import com.dunky.simplilearn.entity.User;
 import com.dunky.simplilearn.entity.Order;
 import com.dunky.simplilearn.entity.OrderItem;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import java.util.Set;
 @Setter
 public class Purchase {
 
-    private Customer customer;
+    private User customer;
     private Address shippingAddress;
     private Address billingAddress;
     private Order order;

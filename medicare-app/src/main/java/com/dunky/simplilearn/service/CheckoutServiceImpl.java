@@ -2,10 +2,10 @@ package com.dunky.simplilearn.service;
 
 import com.dunky.simplilearn.dto.Purchase;
 import com.dunky.simplilearn.dto.PurchaseResponse;
-import com.dunky.simplilearn.entity.Customer;
+import com.dunky.simplilearn.entity.User;
 import com.dunky.simplilearn.entity.Order;
 import com.dunky.simplilearn.entity.OrderItem;
-import com.dunky.simplilearn.repositories.CustomerRepository;
+import com.dunky.simplilearn.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,11 +16,11 @@ import java.util.UUID;
 @Service
 public class CheckoutServiceImpl implements CheckoutService{
 
-    private CustomerRepository customerRepository;
+    private UserRepository customerRepository;
 
     // Constructor dependency injection
     @Autowired
-    public CheckoutServiceImpl(CustomerRepository customerRepository) {
+    public CheckoutServiceImpl(UserRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
     @Override
@@ -43,12 +43,12 @@ public class CheckoutServiceImpl implements CheckoutService{
         order.setShippingAddress(purchase.getShippingAddress());
 
         // populate customer with order
-        Customer customer = purchase.getCustomer();
+        User customer = purchase.getCustomer();
 
         // check if this is an existing customer
         String theEmail = customer.getEmail();
 
-        Customer customerFromDB = customerRepository.findByEmail(theEmail);
+        User customerFromDB = customerRepository.findByEmail(theEmail);
 
         if (customerFromDB != null) {
             // we found them ... let's assign them accordingly
