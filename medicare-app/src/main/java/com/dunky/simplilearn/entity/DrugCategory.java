@@ -2,6 +2,7 @@ package com.dunky.simplilearn.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Table(name="drug_category")
 @Getter
 @Setter
+@NoArgsConstructor
 public class DrugCategory {
 
     @Id
