@@ -16,12 +16,12 @@ import java.util.UUID;
 @Service
 public class CheckoutServiceImpl implements CheckoutService{
 
-    private UserRepository customerRepository;
+    private UserRepository userRepository;
 
     // Constructor dependency injection
     @Autowired
-    public CheckoutServiceImpl(UserRepository customerRepository) {
-        this.customerRepository = customerRepository;
+    public CheckoutServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
     @Override
     @Transactional
@@ -42,22 +42,22 @@ public class CheckoutServiceImpl implements CheckoutService{
         order.setBillingAddress(purchase.getBillingAddress());
         order.setShippingAddress(purchase.getShippingAddress());
 
-        // populate customer with order
-        User customer = purchase.getCustomer();
+        // populate user with order
+        User user = purchase.getUser();
 
-        // check if this is an existing customer
-        String theEmail = customer.getEmail();
+        // check if this is an existing user
+        String theEmail = user.getEmail();
 
-        User customerFromDB = customerRepository.findByEmail(theEmail);
+        User userFromDB = userRepository.findByEmail(theEmail);
 
-        if (customerFromDB != null) {
+        if (userFromDB != null) {
             // we found them ... let's assign them accordingly
-            customer = customerFromDB;
+            user = userFromDB;
         }
-        customer.add(order);
+        user.add(order);
 
         // save to the database
-        customerRepository.save(customer);
+        userRepository.save(user);
 
         // return a response
         return new PurchaseResponse(orderTrackingNumber);

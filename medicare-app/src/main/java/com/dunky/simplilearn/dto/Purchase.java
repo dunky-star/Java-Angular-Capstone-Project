@@ -13,7 +13,7 @@ import java.util.Set;
 @Setter
 public class Purchase {
 
-    private User customer;
+    private User user;
     private Address shippingAddress;
     private Address billingAddress;
     private Order order;
