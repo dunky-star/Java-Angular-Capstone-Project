@@ -16,7 +16,7 @@ import java.util.UUID;
 @Service
 public class CheckoutServiceImpl implements CheckoutService{
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     // Constructor dependency injection
     @Autowired
