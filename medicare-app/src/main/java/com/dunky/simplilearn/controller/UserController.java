@@ -57,7 +57,7 @@ public class UserController {
     }*/
 
     // For users to list all medicines/drugs on the medicare site.
-    @GetMapping("/api/user/drugs")
+    @GetMapping("/api/user/drugs-list")
     public ResponseEntity<?> getAllDrugs(){
         return new ResponseEntity<>(drugService.findAllDrugs(), HttpStatus.OK);
     }
