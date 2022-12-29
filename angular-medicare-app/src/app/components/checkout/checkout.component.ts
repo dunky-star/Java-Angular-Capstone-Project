@@ -1,3 +1,4 @@
+import { User } from './../../common/user';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -41,7 +42,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
 
     this.checkoutFormGroup = this.formBuilder.group({
-        customer: this.formBuilder.group({
+        user: this.formBuilder.group({
         firstName: new FormControl('',
                                       [Validators.required,
                                       Validators.minLength(2),
@@ -166,9 +167,9 @@ export class CheckoutComponent implements OnInit {
 
 
   // Getter methods for the form validation
-  get firstName() { return this.checkoutFormGroup.get('customer.firstName'); }
-  get lastName() { return this.checkoutFormGroup.get('customer.lastName'); }
-  get email() { return this.checkoutFormGroup.get('customer.email'); }
+  get firstName() { return this.checkoutFormGroup.get('user.firstName'); }
+  get lastName() { return this.checkoutFormGroup.get('user.lastName'); }
+  get email() { return this.checkoutFormGroup.get('user.email'); }
 
   get shippingAddressStreet() { return this.checkoutFormGroup.get('shippingAddress.street'); }
   get shippingAddressCity() { return this.checkoutFormGroup.get('shippingAddress.city'); }
@@ -231,8 +232,8 @@ export class CheckoutComponent implements OnInit {
     // set up purchase
     let purchase = new Purchase();
 
-    // populate purchase - customer
-    purchase.customer = this.checkoutFormGroup.controls['customer'].value;
+    // populate purchase - user
+    purchase.user = this.checkoutFormGroup.controls['user'].value;
 
     // populate purchase - shipping address
     purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;

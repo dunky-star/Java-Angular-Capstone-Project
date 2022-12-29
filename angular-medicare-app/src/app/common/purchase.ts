@@ -1,10 +1,10 @@
 import { Address } from "./address";
-import { Customer } from "./customer";
+import { User } from "./user";
 import { Order } from "./order";
 import { OrderItem } from "./order-item";
 
 export class Purchase {
-    customer?: Customer;
+    user?: User;
     shippingAddress?: Address;
     billingAddress?: Address;
     order?: Order;
