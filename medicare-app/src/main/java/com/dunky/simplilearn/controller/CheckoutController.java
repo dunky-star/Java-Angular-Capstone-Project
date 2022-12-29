@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class CheckoutController {
 
     // Dependency injection - constructor.
-    private CheckoutService checkoutService;
+    private final CheckoutService checkoutService;
 
     @Autowired
     public CheckoutController(CheckoutService checkoutService) {
