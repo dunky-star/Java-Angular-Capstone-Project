@@ -16,7 +16,7 @@ The following items should be installed in your system:
 4. TypeScript v4.9.3
 5. Node v18.12.1
 6. Angular v15.0.2
-7. Spring Boot v3.0.0
+7. Spring Boot v2.6.3
 
 
 # License
