@@ -1,10 +1,11 @@
 package com.dunky.simplilearn.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,6 +45,7 @@ public class User {
     private String token;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Order> orders = new HashSet<>();
 
     public void add(Order order) {

@@ -1,12 +1,13 @@
 package com.dunky.simplilearn.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -53,6 +54,7 @@ public class Drug {
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonBackReference
     private DrugCategory category;
 
 }

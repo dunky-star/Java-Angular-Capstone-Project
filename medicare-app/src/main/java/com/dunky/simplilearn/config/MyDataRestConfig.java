@@ -1,11 +1,9 @@
 package com.dunky.simplilearn.config;
 
 import com.dunky.simplilearn.entity.Country;
-import com.dunky.simplilearn.entity.DrugCategory;
 import com.dunky.simplilearn.entity.Drug;
+import com.dunky.simplilearn.entity.DrugCategory;
 import com.dunky.simplilearn.entity.State;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +12,8 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
+import javax.persistence.EntityManager;
+import javax.persistence.metamodel.EntityType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;

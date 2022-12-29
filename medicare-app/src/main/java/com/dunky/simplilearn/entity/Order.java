@@ -1,12 +1,13 @@
 package com.dunky.simplilearn.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
@@ -49,6 +50,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @OneToOne(cascade = CascadeType.ALL)

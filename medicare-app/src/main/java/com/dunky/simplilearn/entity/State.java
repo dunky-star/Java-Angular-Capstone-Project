@@ -1,7 +1,8 @@
 package com.dunky.simplilearn.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="state")
