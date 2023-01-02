@@ -24,6 +24,7 @@ import { ProductListComponent } from './components/admin/product-list/product-li
 import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
 import { UserTemplateComponent } from './components/template/user-template/user-template.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [
@@ -67,7 +68,8 @@ const routes: Routes = [
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [DrugService],
   bootstrap: [AppComponent],
