@@ -12,7 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
@@ -59,17 +59,17 @@ const routes: Routes = [
     ProductListComponent,
     AdminTemplateComponent,
     UserTemplateComponent,
-    LoginComponent
-     ],
+    LoginComponent,
+  ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [DrugService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
