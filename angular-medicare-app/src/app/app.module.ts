@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,15 +13,20 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './components/login/login.component';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UserListComponent } from './components/admin/user-list/user-list.component';
+import { ProductListComponent } from './components/admin/product-list/product-list.component';
+import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
+import { UserTemplateComponent } from './components/template/user-template/user-template.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 
 const routes: Routes = [
-
-  {path: 'login', component: LoginComponent},
 
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
@@ -45,10 +49,17 @@ const routes: Routes = [
     CartStatusComponent,
     CartDetailsComponent,
     CheckoutComponent,
-    LoginComponent,
     LoginStatusComponent,
     NotFoundComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    RegisterComponent,
+    ProfileComponent,
+    DashboardComponent,
+    UserListComponent,
+    ProductListComponent,
+    AdminTemplateComponent,
+    UserTemplateComponent,
+    LoginComponent
      ],
   imports: [
     RouterModule.forRoot(routes),

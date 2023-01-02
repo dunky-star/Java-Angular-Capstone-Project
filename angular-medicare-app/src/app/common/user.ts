@@ -1,10 +1,12 @@
-export class User {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  username?: string;
-  password?: string;
-  role?: string;
-  token?: string;
+import { Role } from "./role";
 
+export class User {
+  id?: number;
+  firstName = '';
+  lastName = '';
+  email = '';
+  username = '';
+  password = '';
+  role?: Role;
+  token = '';
 }
