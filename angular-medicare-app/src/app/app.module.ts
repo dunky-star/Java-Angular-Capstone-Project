@@ -16,6 +16,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
+import { NotFoundComponent } from './components/error/not-found/not-found.component';
+import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
 
 
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
     CartDetailsComponent,
     CheckoutComponent,
     LoginComponent,
-    LoginStatusComponent
+    LoginStatusComponent,
+    NotFoundComponent,
+    UnauthorizedComponent
      ],
   imports: [
     RouterModule.forRoot(routes),
