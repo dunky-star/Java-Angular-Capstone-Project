@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -48,7 +49,7 @@ import { AppRoutingModule } from './app-routing.module';
     AdminTemplateComponent,
     UserTemplateComponent,
     LoginComponent,
-    ProductDrugListComponent
+    ProductDrugListComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,10 +58,10 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    RouterModule.forRoot([])
   ],
   providers: [DrugService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
