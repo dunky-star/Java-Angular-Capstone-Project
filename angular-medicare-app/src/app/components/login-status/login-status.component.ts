@@ -1,4 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-status',
@@ -9,7 +11,7 @@ export class LoginStatusComponent implements OnInit {
   isAuthenticated: boolean = false;
   username: string = '';
 
-  constructor() {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {}
 
