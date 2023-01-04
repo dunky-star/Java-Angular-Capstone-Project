@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DrugService } from './services/drug.service';
-import { Routes, RouterModule} from '@angular/router';
 import { DrugCategoryMenuComponent } from './components/drug-category-menu/drug-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
 import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
@@ -23,22 +22,10 @@ import { UserListComponent } from './components/admin/user-list/user-list.compon
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
 import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
 import { UserTemplateComponent } from './components/template/user-template/user-template.component';
-import { LoginComponent } from './components/user/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/user/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 
-
-const routes: Routes = [
-
-  {path: 'checkout', component: CheckoutComponent},
-  {path: 'cart-details', component: CartDetailsComponent},
-  {path: 'drugs/:id', component: DrugDetailsComponent},
-  {path: 'search/:keyword', component: DrugListComponent},
-  {path: 'category/:id', component: DrugListComponent},
-  {path: 'category', component: DrugListComponent},
-  {path: 'drugs', component: DrugListComponent},
-  {path: '', redirectTo: '/drugs', pathMatch: 'full'},
-  {path: '**', redirectTo: '/drugs', pathMatch: 'full'}
-];
 
 @NgModule({
   declarations: [
@@ -63,7 +50,8 @@ const routes: Routes = [
     LoginComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    // RouterModule.forRoot(routes),
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     NgbModule,
