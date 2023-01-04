@@ -59,7 +59,7 @@ import { LoginStatusComponent } from './components/login-status/login-status.com
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
   ],
   providers: [DrugService],
   bootstrap: [AppComponent],
