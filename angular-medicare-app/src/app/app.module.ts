@@ -19,12 +19,12 @@ import { RegisterComponent } from './components/user/register/register.component
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { UserListComponent } from './components/admin/user-list/user-list.component';
-import { ProductListComponent } from './components/admin/product-list/product-list.component';
 import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
 import { UserTemplateComponent } from './components/template/user-template/user-template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
 
 
 @NgModule({
@@ -44,10 +44,10 @@ import { AppRoutingModule } from './app-routing.module';
     ProfileComponent,
     DashboardComponent,
     UserListComponent,
-    ProductListComponent,
     AdminTemplateComponent,
     UserTemplateComponent,
     LoginComponent,
+    ProductDrugListComponent
   ],
   imports: [
     // RouterModule.forRoot(routes),
@@ -57,9 +57,9 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [DrugService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
