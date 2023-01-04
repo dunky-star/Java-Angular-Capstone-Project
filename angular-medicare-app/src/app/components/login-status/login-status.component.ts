@@ -3,35 +3,22 @@ import { Component, Inject, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login-status',
   templateUrl: './login-status.component.html',
-  styleUrls: ['./login-status.component.css']
+  styleUrls: ['./login-status.component.css'],
 })
-export class LoginStatusComponent implements OnInit{
-
+export class LoginStatusComponent implements OnInit {
   isAuthenticated: boolean = false;
-  userFullName: string = '';
+  username: string = '';
 
+  constructor() {}
 
-  constructor() { }
-
-
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void {}
 
   getUserDetails() {
     if (this.isAuthenticated) {
-
-
     }
   }
 
   logout() {
-    // Terminates the session with Okta and removes current tokens.
-
+    // Terminates the session and removes current tokens.
   }
-
 }
-
-
-

@@ -12,7 +12,6 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginStatusComponent } from './components/login-status/login-status.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
 import { RegisterComponent } from './components/user/register/register.component';
@@ -26,6 +25,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { LoginStatusComponent } from './components/login-status/login-status.component';
 
 
 
@@ -39,7 +39,6 @@ import { RouterModule } from '@angular/router';
     CartStatusComponent,
     CartDetailsComponent,
     CheckoutComponent,
-    LoginStatusComponent,
     NotFoundComponent,
     UnauthorizedComponent,
     RegisterComponent,
@@ -50,6 +49,7 @@ import { RouterModule } from '@angular/router';
     UserTemplateComponent,
     LoginComponent,
     ProductDrugListComponent,
+    LoginStatusComponent,
   ],
   imports: [
     BrowserModule,
