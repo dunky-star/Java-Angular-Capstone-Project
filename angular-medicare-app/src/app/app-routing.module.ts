@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
+import { Role } from './common/role';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
+import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { CartDetailsComponent } from './components/cart-details/cart-details.component';
-import { DrugListComponent } from './components/drug-list/drug-list.component';
-import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
-import {Role} from './common/role';
-
 
 const routes: Routes = [
   //error pages
@@ -48,13 +47,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
-    constructor(private router: Router) {
+  constructor(private router: Router) {
     this.router.errorHandler = (_error: any) => {
       this.router.navigate(['/404']);
-    }
+    };
   }
 }

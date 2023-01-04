@@ -23,8 +23,9 @@ import { AdminTemplateComponent } from './components/template/admin-template/adm
 import { UserTemplateComponent } from './components/template/user-template/user-template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
-import { AppRoutingModule } from './app-routing.module';
 import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 
 @NgModule({
@@ -50,14 +51,14 @@ import { ProductDrugListComponent } from './components/admin/product-drug-list/p
     ProductDrugListComponent
   ],
   imports: [
-    // RouterModule.forRoot(routes),
-    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
+
   ],
   providers: [DrugService],
   bootstrap: [AppComponent]
