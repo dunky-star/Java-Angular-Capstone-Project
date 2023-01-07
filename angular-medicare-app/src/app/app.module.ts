@@ -30,6 +30,7 @@ import { TransactionListComponent } from './components/admin/transaction-list/tr
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { TransactionListComponent } from './components/admin/transaction-list/tr
     ProductDrugListComponent,
     LoginStatusComponent,
     TransactionListComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import com.dunky.simplilearn.entity.Drug;
 import com.dunky.simplilearn.entity.StringResponse;
 import com.dunky.simplilearn.entity.User;
 import com.dunky.simplilearn.service.DrugService;
+import com.dunky.simplilearn.service.TransactionService;
 import com.dunky.simplilearn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,8 @@ public class AdminController {
     @Autowired
     private DrugService drugService;
 
-    //@Autowired
-    //private TransactionService transactionService;
+    @Autowired
+    private TransactionService transactionService;
 
     // To update a user by an Admin.
     @PutMapping("/api/admin/user-update")
@@ -84,7 +85,7 @@ public class AdminController {
         response.setResponse(number.toString());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    /**
+
     @GetMapping("/api/admin/transaction-all")
     public ResponseEntity<?> findAllTransactions(){
         return new ResponseEntity<>(transactionService.findAllTransactions(), HttpStatus.OK);
@@ -97,6 +98,6 @@ public class AdminController {
         response.setResponse(number.toString());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    */
+
 
 }
