@@ -26,6 +26,7 @@ import { ProductDrugListComponent } from './components/admin/product-drug-list/p
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
+import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
 
 
 
@@ -50,6 +51,7 @@ import { LoginStatusComponent } from './components/login-status/login-status.com
     LoginComponent,
     ProductDrugListComponent,
     LoginStatusComponent,
+    TransactionListComponent,
   ],
   imports: [
     BrowserModule,
