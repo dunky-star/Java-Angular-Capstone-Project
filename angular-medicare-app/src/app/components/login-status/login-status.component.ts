@@ -17,10 +17,14 @@ export class LoginStatusComponent implements OnInit {
 
   getUserDetails() {
     if (this.isAuthenticated) {
+
     }
   }
 
-  logout() {
-    // Terminates the session and removes current tokens.
+ logOut(){
+	// Terminates the session and removes current tokens.
+    this.userService.logOut().subscribe(() => {
+      this.router.navigate(['/drugs']);
+    });
   }
 }
