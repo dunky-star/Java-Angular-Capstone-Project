@@ -1,4 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Drug } from '../common/drug';
+import { User } from '../common/user';
 
 const API_URL = 'https://localhost:8443/api/admin/';
 
@@ -37,32 +41,32 @@ export class AdminService {
     return this.http.get(API_URL + 'user-number', { headers: this.headers });
   }
 
-  //products
+  // drugs
 
-  createProduct(product: Product): Observable<any> {
-    return this.http.post(API_URL + 'product-create', JSON.stringify(product), {
+  createDrug(drug: Drug): Observable<any> {
+    return this.http.post(API_URL + 'drug-create', JSON.stringify(drug), {
       headers: this.headers,
     });
   }
 
-  updateProduct(product: Product): Observable<any> {
-    return this.http.put(API_URL + 'product-update', JSON.stringify(product), {
+  updateDrug(drug: Drug): Observable<any> {
+    return this.http.put(API_URL + 'drug-update', JSON.stringify(drug), {
       headers: this.headers,
     });
   }
 
-  deleteProduct(product: Product): Observable<any> {
-    return this.http.post(API_URL + 'product-delete', JSON.stringify(product), {
+  deleteDrug(drug: Drug): Observable<any> {
+    return this.http.post(API_URL + 'drug-delete', JSON.stringify(drug), {
       headers: this.headers,
     });
   }
 
-  findAllProducts(): Observable<any> {
-    return this.http.get(API_URL + 'product-all', { headers: this.headers });
+  findAllDrugs(): Observable<any> {
+    return this.http.get(API_URL + 'drug-all', { headers: this.headers });
   }
 
-  numberOfProducts(): Observable<any> {
-    return this.http.get(API_URL + 'product-number', { headers: this.headers });
+  numberOfDrugss(): Observable<any> {
+    return this.http.get(API_URL + 'drug-number', { headers: this.headers });
   }
 
   //transactions
