@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { Role } from './common/role';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
+import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
+import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
@@ -14,8 +18,8 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   //error pages
-  { path: '404', component: NotFoundComponent },
   { path: '401', component: UnauthorizedComponent },
+  { path: '404', component: NotFoundComponent },
 
   // Checkout requires login
   {
@@ -31,6 +35,33 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.ADMIN, Role.USER] },
+  },
+
+  //Access to admin panel requires logion
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] },
+  },
+  {
+    path: 'user-list',
+    component: UserListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] },
+  },
+  {
+    path: 'product-drug-list',
+    component: ProductDrugListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] },
+  },
+
+  {
+    path: 'transaction-list',
+    component: TransactionListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] },
   },
 
   // Main pages
