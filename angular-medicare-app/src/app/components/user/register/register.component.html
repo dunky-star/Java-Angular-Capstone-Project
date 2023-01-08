@@ -6,7 +6,7 @@
       <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
         <label for="name">Full Name</label>
-        <input type="text" class="form-control input-text-custom" id="name" placeholder="Kaligs Duncan" name="name" [(ngModel)]="user.name"
+        <input type="text" class="form-control input-text-custom" id="name" placeholder="Geoffrey Duncan Opiyo" name="name" [(ngModel)]="user.name"
           #name="ngModel" required minlength="2" maxlength="30"/>
         <div *ngIf="f.submitted && !name.valid" class="help-block">A valid name is required.</div>
       </div>

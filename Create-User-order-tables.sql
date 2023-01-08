@@ -79,3 +79,17 @@ CREATE TABLE `order_item` (
   CONSTRAINT `FK_order_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   CONSTRAINT `FK_drug_id` FOREIGN KEY (`drug_id`) REFERENCES `drugs` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
+
+
+-- Table structure for table `transaction`
+--
+CREATE TABLE `transaction` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `drug_id` bigint DEFAULT NULL,
+  `user_id` bigint DEFAULT NULL,
+  `purchase_date` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `K_user_id` (`user_id`),
+  CONSTRAINT `FK_drugs_trans_id` FOREIGN KEY (`drug_id`) REFERENCES `drugs` (`id`),
+  CONSTRAINT `FK_user_trans_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
