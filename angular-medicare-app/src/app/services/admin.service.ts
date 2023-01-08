@@ -34,39 +34,46 @@ export class AdminService {
   }
 
   findAllUsers(): Observable<any> {
-    return this.http.get(API_URL + 'user-all', { headers: this.headers });
+    return this.http.get(API_URL + 'user-all',
+    { headers: this.headers });
   }
 
   numberOfUsers(): Observable<any> {
-    return this.http.get(API_URL + 'user-number', { headers: this.headers });
+    return this.http.get(API_URL + 'user-number',
+    { headers: this.headers });
   }
 
   // drugs
 
   createDrug(drug: Drug): Observable<any> {
-    return this.http.post(API_URL + 'drug-create', JSON.stringify(drug), {
+    return this.http.post(API_URL + 'drug-create', JSON.stringify(drug),
+     {
       headers: this.headers,
     });
   }
 
   updateDrug(drug: Drug): Observable<any> {
-    return this.http.put(API_URL + 'drug-update', JSON.stringify(drug), {
+    return this.http.put(API_URL + 'drug-update', JSON.stringify(drug),
+    {
       headers: this.headers,
     });
   }
 
   deleteDrug(drug: Drug): Observable<any> {
-    return this.http.post(API_URL + 'drug-delete', JSON.stringify(drug), {
+    return this.http.post(API_URL + 'drug-delete', JSON.stringify(drug),
+    {
       headers: this.headers,
     });
   }
 
   findAllDrugs(): Observable<any> {
-    return this.http.get(API_URL + 'drug-all', { headers: this.headers });
+    return this.http.get(API_URL + 'drug-all',
+    { headers: this.headers });
   }
 
-  numberOfDrugss(): Observable<any> {
-    return this.http.get(API_URL + 'drug-number', { headers: this.headers });
+  numberOfDrugs(): Observable<any> {
+    return this.http.get(API_URL + 'drug-number',
+    { headers: this.headers });
   }
 
   //transactions
@@ -78,7 +85,8 @@ export class AdminService {
   }
 
   numberOfTransactions(): Observable<any> {
-    return this.http.get(API_URL + 'transaction-number', {
+    return this.http.get(API_URL + 'transaction-number',
+    {
       headers: this.headers,
     });
   }
