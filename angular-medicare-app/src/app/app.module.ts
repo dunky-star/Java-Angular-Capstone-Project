@@ -27,6 +27,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
 import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -53,7 +67,6 @@ import { TransactionListComponent } from './components/admin/transaction-list/tr
     ProductDrugListComponent,
     LoginStatusComponent,
     TransactionListComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -63,6 +76,20 @@ import { TransactionListComponent } from './components/admin/transaction-list/tr
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatListModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatTableModule,
+    MatProgressBarModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSelectModule,
     RouterModule.forRoot([]),
   ],
   providers: [DrugService],
