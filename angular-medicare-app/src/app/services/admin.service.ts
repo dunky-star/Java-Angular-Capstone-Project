@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Drug } from '../common/drug';
 import { User } from '../common/user';
 
-const API_URL = 'https://localhost:8443/api/admin/';
+const API_URL = 'http://localhost:8181/api/admin/';
 
 @Injectable({
   providedIn: 'root',
