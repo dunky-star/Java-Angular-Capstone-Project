@@ -1,18 +1,14 @@
 package com.dunky.simplilearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name="country")
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 public class Country {
 
     @Id

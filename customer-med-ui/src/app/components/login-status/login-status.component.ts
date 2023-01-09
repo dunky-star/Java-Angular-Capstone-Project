@@ -13,7 +13,9 @@ export class LoginStatusComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   getUserDetails() {
     if (this.isAuthenticated) {

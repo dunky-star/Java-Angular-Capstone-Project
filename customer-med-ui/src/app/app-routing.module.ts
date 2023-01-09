@@ -11,6 +11,7 @@ import { DrugDetailsComponent } from './components/drug-details/drug-details.com
 import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
+import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegisterComponent } from './components/user/register/register.component';

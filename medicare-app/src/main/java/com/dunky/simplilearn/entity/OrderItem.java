@@ -1,17 +1,13 @@
 package com.dunky.simplilearn.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name="order_item")
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 public class OrderItem {
 
     @Id

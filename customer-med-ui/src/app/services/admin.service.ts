@@ -16,7 +16,7 @@ export class AdminService {
   constructor(private http: HttpClient) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser')!);
     this.headers = new HttpHeaders({
-      authorization: 'Bearer ' + this.currentUser.token,
+      authorization: 'Bearer ' +this.currentUser.token,
       'Content-Type': 'application/json; charset=UTF-8',
     });
   }
@@ -34,46 +34,39 @@ export class AdminService {
   }
 
   findAllUsers(): Observable<any> {
-    return this.http.get(API_URL + 'user-all',
-    { headers: this.headers });
+    return this.http.get(API_URL + 'user-all', { headers: this.headers });
   }
 
   numberOfUsers(): Observable<any> {
-    return this.http.get(API_URL + 'user-number',
-    { headers: this.headers });
+    return this.http.get(API_URL + 'user-number', { headers: this.headers });
   }
 
-  // drugs
+  //drugs
 
-  createDrug(drug: Drug): Observable<any> {
-    return this.http.post(API_URL + 'drug-create', JSON.stringify(drug),
-     {
+  createDrug(product: Drug): Observable<any> {
+    return this.http.post(API_URL + 'drug-create', JSON.stringify(product), {
       headers: this.headers,
     });
   }
 
-  updateDrug(drug: Drug): Observable<any> {
-    return this.http.put(API_URL + 'drug-update', JSON.stringify(drug),
-    {
+  updateDrug(product: Drug): Observable<any> {
+    return this.http.put(API_URL + 'drug-update', JSON.stringify(product), {
       headers: this.headers,
     });
   }
 
-  deleteDrug(drug: Drug): Observable<any> {
-    return this.http.post(API_URL + 'drug-delete', JSON.stringify(drug),
-    {
+  deleteDrug(product: Drug): Observable<any> {
+    return this.http.post(API_URL + 'drug-delete', JSON.stringify(product), {
       headers: this.headers,
     });
   }
 
   findAllDrugs(): Observable<any> {
-    return this.http.get(API_URL + 'drug-all',
-    { headers: this.headers });
+    return this.http.get(API_URL + 'drug-all', { headers: this.headers });
   }
 
   numberOfDrugs(): Observable<any> {
-    return this.http.get(API_URL + 'drug-number',
-    { headers: this.headers });
+    return this.http.get(API_URL + 'drug-number', { headers: this.headers });
   }
 
   //transactions
@@ -85,8 +78,7 @@ export class AdminService {
   }
 
   numberOfTransactions(): Observable<any> {
-    return this.http.get(API_URL + 'transaction-number',
-    {
+    return this.http.get(API_URL + 'transaction-number', {
       headers: this.headers,
     });
   }

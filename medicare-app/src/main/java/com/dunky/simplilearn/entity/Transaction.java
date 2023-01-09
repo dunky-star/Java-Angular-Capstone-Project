@@ -1,13 +1,11 @@
 package com.dunky.simplilearn.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name="transaction")
 public class Transaction {
