@@ -89,8 +89,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatProgressBarModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule,
-    RouterModule.forRoot([]),
+    MatSelectModule
+    
   ],
   providers: [DrugService],
   bootstrap: [AppComponent],

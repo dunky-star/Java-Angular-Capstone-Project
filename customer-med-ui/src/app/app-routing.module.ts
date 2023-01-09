@@ -79,13 +79,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
-  constructor(private router: Router) {
-    this.router.errorHandler = (_error: any) => {
+    constructor(private router: Router) {
+    this.router.errorHandler = (error: any) => {
       this.router.navigate(['/404']);
-    };
+    }
   }
 }

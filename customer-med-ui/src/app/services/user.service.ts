@@ -15,7 +15,7 @@ export class UserService {
   private currentUserSubject: BehaviorSubject<User>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
+    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser') as string));
     this.currentUser = this.currentUserSubject.asObservable();
    }
 
