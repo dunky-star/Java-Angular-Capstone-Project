@@ -21,15 +21,9 @@ export class LoginStatusComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /**if (this.userService.isLoggedIn) {
-      this.isAuthenticated = true;
-    } else {
-      !this.isAuthenticated;
-    }
-    **/
+
   }
 
-  getUserDetails() {}
 
   logOut() {
     // Terminates the session and removes current tokens.
