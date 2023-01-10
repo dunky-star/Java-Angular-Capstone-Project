@@ -12,10 +12,10 @@ declare var $: any;
   styleUrls: ['./product-drug-list.component.css'],
 })
 export class ProductDrugListComponent implements OnInit {
-  productList: Array<Drug> = [];
+  drugList: Array<Drug> = [];
   dataSource: MatTableDataSource<Drug> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'name', 'unitPrice', 'action'];
-  selectedProduct: Drug = new Drug();
+  displayedColumns: string[] = ['id', 'name', 'price', 'action'];
+  selectedDrug: Drug = new Drug();
   errorMessage?: string;
   infoMessage?: string;
 
@@ -37,35 +37,35 @@ export class ProductDrugListComponent implements OnInit {
 
   findAllProducts() {
     this.adminService.findAllDrugs().subscribe((data) => {
-      this.productList = data;
+      this.drugList = data;
       this.dataSource.data = data;
     });
   }
 
-  createNewProductRequest() {
-    this.selectedProduct = new Drug();
+  createNewDrugRequest() {
+    this.selectedDrug = new Drug();
     $('#productModal').modal('show');
   }
 
-  editProductRequest(product: Drug) {
-    this.selectedProduct = product;
+  editDrugRequest(drug: Drug) {
+    this.selectedDrug = drug;
     $('#productModal').modal('show');
   }
 
-  saveProduct() {
-    if (!this.selectedProduct.id) {
-      this.createProduct();
+  saveDrug() {
+    if (!this.selectedDrug.id) {
+      this.createDrug();
     } else {
-      this.updateProduct();
+      this.updateDrug();
     }
   }
 
-  createProduct() {
-    this.adminService.createDrug(this.selectedProduct).subscribe({
+  createDrug() {
+    this.adminService.createDrug(this.selectedDrug).subscribe({
       next: (data) => {
-        this.productList.push(data);
-        this.dataSource = new MatTableDataSource(this.productList);
-        this.infoMessage = 'Mission is completed';
+        this.drugList.push(data);
+        this.dataSource = new MatTableDataSource(this.drugList);
+        this.infoMessage = 'Creation is complete';
         $('#productModal').modal('hide');
       },
       error: () => {
@@ -74,15 +74,15 @@ export class ProductDrugListComponent implements OnInit {
     });
   }
 
-  updateProduct() {
-    this.adminService.updateDrug(this.selectedProduct).subscribe({
+  updateDrug() {
+    this.adminService.updateDrug(this.selectedDrug).subscribe({
       next: () => {
-        let itemIndex = this.productList.findIndex(
-          (item) => item.id == this.selectedProduct.id
+        let itemIndex = this.drugList.findIndex(
+          (item) => item.id == this.selectedDrug.id
         );
-        this.productList[itemIndex] = this.selectedProduct;
-        this.dataSource = new MatTableDataSource(this.productList);
-        this.infoMessage = 'Operation is completed';
+        this.drugList[itemIndex] = this.selectedDrug;
+        this.dataSource = new MatTableDataSource(this.drugList);
+        this.infoMessage = 'Update is complete';
         $('#productModal').modal('hide');
       },
       error: () => {
@@ -91,22 +91,22 @@ export class ProductDrugListComponent implements OnInit {
     });
   }
 
-  deleteProductRequest(product: Drug) {
-    this.selectedProduct = product;
+  deleteDrugRequest(drug: Drug) {
+    this.selectedDrug = drug;
     $('#deleteModal').modal('show');
   }
 
-  deleteProduct() {
-    this.adminService.deleteDrug(this.selectedProduct).subscribe({
+  deleteDrug() {
+    this.adminService.deleteDrug(this.selectedDrug).subscribe({
       next: () => {
-        let itemIndex = this.productList.findIndex(
-          (item) => item.id == this.selectedProduct.id
+        let itemIndex = this.drugList.findIndex(
+          (item) => item.id == this.selectedDrug.id
         );
         if (itemIndex !== -1) {
-          this.productList.splice(itemIndex, 1);
+          this.drugList.splice(itemIndex, 1);
         }
-        this.dataSource = new MatTableDataSource(this.productList);
-        this.infoMessage = 'Mission is completed';
+        this.dataSource = new MatTableDataSource(this.drugList);
+        this.infoMessage = 'Delete is complete';
         $('#deleteModal').modal('hide');
       },
       error: () => {
