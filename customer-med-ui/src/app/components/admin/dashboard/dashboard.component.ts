@@ -8,14 +8,14 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class DashboardComponent implements OnInit {
   userCount: any = '';
-  productCount: any = '';
+  drugCount: any = '';
   transactionCount: any = '';
 
   constructor(private adminService: AdminService) {}
 
   ngOnInit() {
     this.numberOfUsers();
-    this.numberOfProducts();
+    this.numberOfDrugs();
     this.numberOfTransactions();
   }
 
@@ -25,9 +25,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  numberOfProducts() {
+  numberOfDrugs() {
     this.adminService.numberOfDrugs().subscribe((data: { response: any }) => {
-        this.productCount = data.response;
+        this.drugCount = data.response;
       });
   }
 
