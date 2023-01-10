@@ -19,7 +19,7 @@ export class LoginComponent {
   login() {
     this.userService.login(this.user).subscribe({
       next: () => {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/drugs']);
       },
       error: () => {
         this.errorMessage = 'Username or password is incorrect.';

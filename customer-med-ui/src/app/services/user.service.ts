@@ -20,10 +20,10 @@ export class UserService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  /**The currentUserValue getter allows other components an easy way to get the value of the currently
+  /**The current User Value getter isAuthenticated allows other components an easy way to get the value of the currently
    * logged in user without having to subscribe to the user Observable.
    **/
-  public get currentUserValue(): User {
+  public get isLoggedIn(): User {
     return this.currentUserSubject.value;
   }
 

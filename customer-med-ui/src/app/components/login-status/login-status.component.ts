@@ -11,24 +11,30 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginStatusComponent implements OnInit {
   isAuthenticated: boolean = false;
   name: string = '';
-  user: User = new User();
+  currentUser: User = new User();
   errorMessage?: string;
 
-  constructor(private userService: UserService, private router: Router) {}
-
-  ngOnInit(): void {}
-
-  getUserDetails() {
-    if (this.isAuthenticated) {
-    }
+  constructor(private userService: UserService, private router: Router) {
+    this.userService.currentUser.subscribe((data) => {
+      this.currentUser = data;
+    });
   }
 
+  ngOnInit(): void {
+    /**if (this.userService.isLoggedIn) {
+      this.isAuthenticated = true;
+    } else {
+      !this.isAuthenticated;
+    }
+    **/
+  }
 
+  getUserDetails() {}
 
   logOut() {
     // Terminates the session and removes current tokens.
     this.userService.logOut().subscribe(() => {
-      this.router.navigate(['/drugs']);
+      this.router.navigate(['/login']);
     });
   }
 }
