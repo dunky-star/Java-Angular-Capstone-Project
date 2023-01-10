@@ -10,17 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-
-  user: User = new User();
-  isSuccessful = false;
-  isSignUpFailed = false;
-
-  form: any = {
-    name: null,
-    email: null,
-    username: null,
-    password: null,
-  };
+  user: User = new User;
 
   errorMessage?: string;
 
@@ -28,18 +18,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSubmit(): void {
-    const { name, email, username, password } = this.form;
-
+  register() {
     this.userService.register(this.user).subscribe({
       next: () => {
         this.router.navigate(['/login']);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
       },
-      error: (err) => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
+      error: () => {
+        this.errorMessage = 'Username is already exist';
       },
       complete: () => {},
     });

@@ -7,58 +7,66 @@ import { User } from '../common/user';
 const API_URL = "https://localhost:8443/api/user/";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
   public currentUser: Observable<User>;
   private currentUserSubject: BehaviorSubject<User>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser') as string));
+    this.currentUserSubject = new BehaviorSubject<User>(
+      JSON.parse(localStorage.getItem('currentUser') as string)
+    );
     this.currentUser = this.currentUserSubject.asObservable();
-   }
+  }
 
-    public get currentUserValue(): User {
+  /**The currentUserValue getter allows other components an easy way to get the value of the currently
+   * logged in user without having to subscribe to the user Observable.
+   **/
+  public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
 
   login(user: User): Observable<any> {
-    const headers = new HttpHeaders(user ? {
-      authorization:'Basic ' + window.btoa(user.username + ':' + user.password)
-    }:{});
+    const headers = new HttpHeaders(
+      user
+        ? {
+            authorization:
+              'Basic ' + window.btoa(user.username + ':' + user.password),
+          }
+        : {}
+    );
 
-    return this.http.get<any> (API_URL + "login", {headers: headers})
-    .pipe(map(response => {
-      if(response){
-        localStorage.setItem('currentUser', JSON.stringify(response));
-        this.currentUserSubject.next(response);
-      }
-      return response;
-    }));
+    return this.http.get<any>(API_URL + 'login', { headers: headers }).pipe(
+      map((response) => {
+        if (response) {
+          localStorage.setItem('currentUser', JSON.stringify(response));
+          this.currentUserSubject.next(response);
+        }
+        return response;
+      })
+    );
   }
 
   logOut(): Observable<any> {
-    return this.http.post(API_URL + "logout", {})
-    .pipe(map(response => {
-      localStorage.removeItem('currentUser');
-      this.currentUserSubject.next(null!);
-    }));
+    return this.http.post(API_URL + 'logout', {}).pipe(
+      map((_response) => {
+        localStorage.removeItem('currentUser');
+        this.currentUserSubject.next(null!);
+      })
+    );
   }
-
 
   register(user: User): Observable<any> {
-    return this.http.post(API_URL + "registration", JSON.stringify(user),
-    {headers: {"Content-Type":"application/json; charset=UTF-8"}});
+    return this.http.post(API_URL + 'registration', JSON.stringify(user), {
+      headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+    });
   }
-
 
   findAllDrugs(): Observable<any> {
     return this.http.get(API_URL + 'drugs-list', {
       headers: { 'Content-Type': 'application/json; charset=UTF-8' },
     });
   }
-
-
 }
 
