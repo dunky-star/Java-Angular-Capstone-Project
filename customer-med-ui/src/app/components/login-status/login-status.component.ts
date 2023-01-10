@@ -16,7 +16,7 @@ export class LoginStatusComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) {
     this.userService.currentUser.subscribe((data) => {
-      this.currentUser = data;
+    this.currentUser = data;
     });
   }
 
