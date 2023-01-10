@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  medicareApiUrl: "http://localhost:8181/api"
+  medicareApiUrl: "https://localhost:8443/api"
 };
 
 /*

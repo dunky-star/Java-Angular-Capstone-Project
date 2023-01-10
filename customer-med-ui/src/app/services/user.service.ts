@@ -4,7 +4,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 import { User } from '../common/user';
 
 // Bakend API URL
-const API_URL = "http://localhost:8181/api/user/";
+const API_URL = "https://localhost:8443/api/user/";
 
 @Injectable({
   providedIn: 'root'
