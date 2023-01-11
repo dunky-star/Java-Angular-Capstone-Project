@@ -24,7 +24,6 @@ export class LoginStatusComponent implements OnInit {
 
   }
 
-
   logOut() {
     // Terminates the session and removes current tokens.
     this.userService.logOut().subscribe(() => {
