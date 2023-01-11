@@ -1,7 +1,10 @@
 package com.dunky.simplilearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,7 +16,9 @@ import java.util.Set;
 
 @Entity
 @Table(name="orders")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Order {
 
     @Id
@@ -42,6 +47,7 @@ public class Order {
     private Date lastUpdated;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
+    @JsonManagedReference
     private Set<OrderItem> orderItems = new HashSet<>();
 
     @ManyToOne

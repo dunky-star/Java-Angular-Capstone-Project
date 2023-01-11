@@ -1,7 +1,9 @@
 package com.dunky.simplilearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,7 +13,9 @@ import java.util.Date;
 
 @Entity
 @Table(name="drugs")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Drug {
 
     @Id

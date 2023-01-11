@@ -1,12 +1,16 @@
 package com.dunky.simplilearn.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="address")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Address {
 
     @Id

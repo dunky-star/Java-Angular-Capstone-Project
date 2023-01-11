@@ -1,13 +1,18 @@
 package com.dunky.simplilearn.entity;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name="order_item")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class OrderItem {
 
     @Id
@@ -29,6 +34,7 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
+    @JsonBackReference
     private Order order;
 
 }

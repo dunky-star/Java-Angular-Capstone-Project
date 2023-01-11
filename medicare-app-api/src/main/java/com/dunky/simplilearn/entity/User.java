@@ -2,6 +2,7 @@ package com.dunky.simplilearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.Set;
 @Table(name="user")
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
 
     @Id
