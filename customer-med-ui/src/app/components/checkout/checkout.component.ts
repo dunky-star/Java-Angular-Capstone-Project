@@ -43,17 +43,12 @@ export class CheckoutComponent implements OnInit {
 
     this.checkoutFormGroup = this.formBuilder.group({
         user: this.formBuilder.group({
-        firstName: new FormControl('',
+        name: new FormControl('',
                                       [Validators.required,
                                       Validators.minLength(2),
                                       DunkyCustomValidators.notOnlyWhitespace,
                                       Validators.pattern('^[a-zA-Z \-\']+')]),
 
-        lastName:  new FormControl('',
-                                      [Validators.required,
-                                      Validators.minLength(2),
-                                      DunkyCustomValidators.notOnlyWhitespace,
-                                      Validators.pattern('^[a-zA-Z \-\']+')]),
         email: new FormControl('',
                               [Validators.required,
                               Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
@@ -167,8 +162,7 @@ export class CheckoutComponent implements OnInit {
 
 
   // Getter methods for the form validation
-  get firstName() { return this.checkoutFormGroup.get('user.firstName'); }
-  get lastName() { return this.checkoutFormGroup.get('user.lastName'); }
+  get name() { return this.checkoutFormGroup.get('user.name'); }
   get email() { return this.checkoutFormGroup.get('user.email'); }
 
   get shippingAddressStreet() { return this.checkoutFormGroup.get('shippingAddress.street'); }

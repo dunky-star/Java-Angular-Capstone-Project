@@ -9,49 +9,25 @@
         <h3>Customer</h3>
 
         <div class="row">
-          <div class="col-md-2"> <label>First Name</label></div>
+          <div class="col-md-2"> <label>Full Name</label></div>
           <div class="col-md-9">
             <div class="input-space">
               <input formControlName="firstName" type="text">
-                <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)" class="alert alert-danger mt-1">
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger mt-1">
 
-                  <div *ngIf="firstName?.errors?.required || firstName?.errors?.notOnlyWhitespace">
+                  <div *ngIf="name?.errors?.required || name?.errors?.notOnlyWhitespace">
                     First Name is required
                   </div>
 
-                  <div *ngIf="firstName?.errors?.pattern">
+                  <div *ngIf="name?.errors?.pattern">
                     Numbers or special character not allowed in firt name
                   </div>
 
-                  <div *ngIf="firstName?.errors?.minlength">
+                  <div *ngIf="name?.errors?.minlength">
                     First Name must be at least 2 characters long
                   </div>
 
                 </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2"> <label>Last Name</label></div>
-          <div class="col-md-9">
-            <div class="input-space">
-              <input formControlName="lastName" type="text">
-              <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)" class="alert alert-danger mt-1">
-
-                <div *ngIf="lastName?.errors?.required || lastName?.errors?.notOnlyWhitespace">
-                  Last Name is required
-                </div>
-
-                  <div *ngIf="lastName?.errors?.pattern">
-                    Numbers or special character not allowed in last name
-                  </div>
-
-                <div *ngIf="lastName?.errors?.minlength">
-                  Last Name must be at least 2 characters long
-                </div>
-
-              </div>
             </div>
           </div>
         </div>
