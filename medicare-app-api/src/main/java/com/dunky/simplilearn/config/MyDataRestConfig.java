@@ -1,9 +1,6 @@
 package com.dunky.simplilearn.config;
 
-import com.dunky.simplilearn.entity.Country;
-import com.dunky.simplilearn.entity.Drug;
-import com.dunky.simplilearn.entity.DrugCategory;
-import com.dunky.simplilearn.entity.State;
+import com.dunky.simplilearn.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -42,6 +39,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(DrugCategory.class, config, theUnsupportedActions);
         disableHttpMethods(Country.class, config, theUnsupportedActions);
         disableHttpMethods(State.class, config, theUnsupportedActions);
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         // call an internal helper method
         exposeIds(config);
