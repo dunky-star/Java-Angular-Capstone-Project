@@ -6,7 +6,7 @@
 .security-btn {
   position: relative;
   right: 0;
-  min-width: 110px;
+  min-width: 100px;
   color: #fff;
   border: 10px solid #205b8d;
   -webkit-border-radius: 3px;
@@ -33,9 +33,9 @@
     - remove 'solid', 'font-size', 'color'
 */
 .login-status-user-info {
-  line-height: 20px;
+  line-height: 43px;
   border: 1px;
-  padding: 0 17px;
+  padding: 0 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
