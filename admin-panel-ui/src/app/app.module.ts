@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -52,7 +53,6 @@ import { MatSelectModule } from '@angular/material/select';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NgModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -70,8 +70,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatProgressBarModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule
-
+    MatSelectModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
