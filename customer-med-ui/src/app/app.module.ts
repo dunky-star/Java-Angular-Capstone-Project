@@ -41,6 +41,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
 
@@ -67,6 +68,7 @@ import { MatSelectModule } from '@angular/material/select';
     ProductDrugListComponent,
     LoginStatusComponent,
     TransactionListComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,
