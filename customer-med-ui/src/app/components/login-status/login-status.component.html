@@ -8,4 +8,6 @@
 
   <button *ngIf="currentUser" (click)="logOut()" class="security-btn">Logout</button>
 
+  <button *ngIf="currentUser" routerLink="/order-history" class="security-btn ms-1">Orders</button>
+
 </div>

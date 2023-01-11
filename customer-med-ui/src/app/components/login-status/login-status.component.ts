@@ -13,6 +13,7 @@ export class LoginStatusComponent implements OnInit {
   name: string = '';
   currentUser: User = new User();
   errorMessage?: string;
+  storage: Storage = sessionStorage;
 
   constructor(private userService: UserService, private router: Router) {
     this.userService.currentUser.subscribe((data) => {
@@ -22,6 +23,19 @@ export class LoginStatusComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.getUserDetails();
+
+  }
+
+  getUserDetails(){
+    if(this.currentUser){
+      // Retrieve the user's email address from authenicated/loggedIn user.
+      const theEmail = this.currentUser.email;
+
+      // Now, store the email in the browser storage.
+       this.storage.setItem('userEmail', JSON.stringify(theEmail));
+
+    }
   }
 
   logOut() {

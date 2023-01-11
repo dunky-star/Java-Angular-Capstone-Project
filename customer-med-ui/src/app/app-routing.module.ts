@@ -11,6 +11,7 @@ import { DrugDetailsComponent } from './components/drug-details/drug-details.com
 import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
@@ -26,6 +27,14 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN, Role.USER] },
+  },
+
+  // Checkout requires login
+  {
+    path: 'order-history',
+    component: OrderHistoryComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.ADMIN, Role.USER] },
   },
