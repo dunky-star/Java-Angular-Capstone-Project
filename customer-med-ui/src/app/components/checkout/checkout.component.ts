@@ -45,16 +45,19 @@ export class CheckoutComponent implements OnInit {
     // read the user's email address from browser storage
     const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
+    // read the user's name from browser storage
+    const theName = JSON.parse(this.storage.getItem('userName')!);
+
     this.checkoutFormGroup = this.formBuilder.group({
       user: this.formBuilder.group({
-        name: new FormControl('', [
+        name: new FormControl(theName, [
           Validators.required,
           Validators.minLength(2),
           DunkyCustomValidators.notOnlyWhitespace,
           Validators.pattern("^[a-zA-Z -']+"),
         ]),
 
-        email: new FormControl('', [
+        email: new FormControl(theEmail, [
           Validators.required,
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
         ]),

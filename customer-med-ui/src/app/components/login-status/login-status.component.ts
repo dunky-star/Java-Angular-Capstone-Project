@@ -31,10 +31,13 @@ export class LoginStatusComponent implements OnInit {
     if(this.currentUser){
       // Retrieve the user's email address from authenicated/loggedIn user.
       const theEmail = this.currentUser.email;
+      const theName = this.currentUser.name;
 
       // Now, store the email in the browser storage.
-       this.storage.setItem('userEmail', JSON.stringify(theEmail));
+      this.storage.setItem('userEmail', JSON.stringify(theEmail));
 
+      // Now, store the user's name in the browser storage.
+      this.storage.setItem('userName', JSON.stringify(theName));
     }
   }
 
