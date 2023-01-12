@@ -31,6 +31,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './components/user/home/home.component';
 
 
 
@@ -48,6 +49,7 @@ import { CommonModule } from '@angular/common';
     ProfileComponent,
     UserListComponent,
     TransactionListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

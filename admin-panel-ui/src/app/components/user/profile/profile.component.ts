@@ -19,7 +19,7 @@ export class ProfileComponent {
 
   logOut() {
     this.userService.logOut().subscribe(() => {
-      this.router.navigate(['/drugs']);
+      this.router.navigate(['/home']);
     });
   }
 }
