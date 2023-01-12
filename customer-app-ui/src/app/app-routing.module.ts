@@ -31,7 +31,7 @@ const routes: Routes = [
     data: { roles: [Role.ADMIN, Role.USER] },
   },
 
-  // Checkout requires login
+  // Order history requires login
   {
     path: 'order-history',
     component: OrderHistoryComponent,
@@ -39,41 +39,7 @@ const routes: Routes = [
     data: { roles: [Role.ADMIN, Role.USER] },
   },
 
-  // Profile requires login
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.ADMIN, Role.USER] },
-  },
-
-  //Access to admin panel requires logion
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.ADMIN] },
-  },
-  {
-    path: 'user-list',
-    component: UserListComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.ADMIN] },
-  },
-  {
-    path: 'product-drug-list',
-    component: ProductDrugListComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.ADMIN] },
-  },
-
-  {
-    path: 'transaction-list',
-    component: TransactionListComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.ADMIN] },
-  },
-
+ 
   // Main pages
   { path: 'cart-details', component: CartDetailsComponent },
   { path: 'login', component: LoginComponent },
