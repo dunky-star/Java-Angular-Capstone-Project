@@ -43,9 +43,9 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 //These are public paths
                 .antMatchers("/resources/**", "/error", "/api/user/**",
                         "/api/drugs/**","/api/countries/**","/api/states/**",
-                        "/api/drug-category/**","/api/admin/**", "/api/checkout/purchase/**", "/api/orders/**").permitAll()
+                        "/api/drug-category/**", "/api/checkout/purchase/**", "/api/orders/**").permitAll()
                 //These can be reachable for just have admin role.
-                //.antMatchers("/api/admin/**").hasRole("ADMIN")
+                .antMatchers("/api/admin/**").hasRole("ADMIN")
                 //All remaining paths should need authentication.
                 .anyRequest().fullyAuthenticated()
                 .and()

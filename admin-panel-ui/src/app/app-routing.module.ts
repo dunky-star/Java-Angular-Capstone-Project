@@ -14,15 +14,14 @@ import { Role } from './common/role';
 import { HomeComponent } from './components/user/home/home.component';
 
 const routes: Routes = [
+  //Main page
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   //User pages
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '404', component: NotFoundComponent },
   { path: '401', component: UnauthorizedComponent },
-  //Main page
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
 
   // Below are pages that require login
   {
