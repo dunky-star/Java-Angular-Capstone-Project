@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { Role } from './common/role';
-import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
-import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
-import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
-import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DrugDetailsComponent } from './components/drug-details/drug-details.component';
@@ -12,9 +8,7 @@ import { DrugListComponent } from './components/drug-list/drug-list.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
-import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
 import { LoginComponent } from './components/user/login/login.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -39,7 +33,7 @@ const routes: Routes = [
     data: { roles: [Role.ADMIN, Role.USER] },
   },
 
- 
+
   // Main pages
   { path: 'cart-details', component: CartDetailsComponent },
   { path: 'login', component: LoginComponent },

@@ -15,32 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
 import { UnauthorizedComponent } from './components/error/unauthorized/unauthorized.component';
 import { RegisterComponent } from './components/user/register/register.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
-import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
-import { UserListComponent } from './components/admin/user-list/user-list.component';
-import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
-import { UserTemplateComponent } from './components/template/user-template/user-template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
-import { ProductDrugListComponent } from './components/admin/product-drug-list/product-drug-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
-import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatSelectModule } from '@angular/material/select';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
@@ -59,10 +37,7 @@ import { OrderHistoryComponent } from './components/order-history/order-history.
     NotFoundComponent,
     UnauthorizedComponent,
     RegisterComponent,
-    ProfileComponent,
-    AdminTemplateComponent,
-    UserTemplateComponent,
-	LoginComponent,
+    LoginComponent,
     LoginStatusComponent,
     OrderHistoryComponent,
   ],
@@ -74,22 +49,7 @@ import { OrderHistoryComponent } from './components/order-history/order-history.
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatSlideToggleModule,
-    MatListModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatInputModule,
-    MatTableModule,
-    MatProgressBarModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatSelectModule
-    
-  ],
+    ],
   providers: [DrugService],
   bootstrap: [AppComponent],
 })

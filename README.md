@@ -12,11 +12,11 @@ The following items should be installed in your system:
 
 1. Java 17 or newer (full JDK not a JRE)
 2. git command tool
-3. Your preferred IDE (recommended: IntelliJ IDEA)
+3. Your preferred IDE (recommended: IntelliJ IDEA for Backend API and VS Code for Angular front-ends)
 4. TypeScript v4.8.2
 5. Node v18.12.1
 6. Angular v15.0.4
-7. Spring Boot v2.6.5
+7. Spring Boot v2.6.3
 
 
 # License
