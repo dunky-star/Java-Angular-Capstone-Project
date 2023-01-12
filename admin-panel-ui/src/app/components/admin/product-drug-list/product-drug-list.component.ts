@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Drug } from 'src/app/common/drug';
 import { AdminService } from 'src/app/services/admin.service';
+declare var $: any;
 
 @Component({
   selector: 'app-product-drug-list',
