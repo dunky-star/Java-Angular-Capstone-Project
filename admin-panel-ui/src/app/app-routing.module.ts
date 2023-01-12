@@ -14,7 +14,7 @@ import { Role } from './common/role';
 
 const routes: Routes = [
   //Main page
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'drugs', pathMatch: 'full' },
   //User pages
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
