@@ -25,10 +25,10 @@ The following items should be installed in your system:
 4. npm install --save-dev @types/jquery
 5. npm install -D @types/bootstrap
 
-## Running customer UI app
+### Running customer UI app
 Run `npm start` for a dev server. Navigate to `https://localhost:4200/`
 
-## Running admin panel UI app
+### Running admin panel UI app
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
 
 
