@@ -4,7 +4,7 @@ MediCare is a Spring Boot application built using Maven - Java (Spring boot and 
 Creating a dynamic and responsive Java e-healthcare web application for online ordering of medicines [different categories]
 (check .PDF doc. for the requirement spec.).
 
-# Working with MediCare in your IDE.
+## Working with MediCare in your IDE.
 
 Prerequisites.
 
@@ -18,7 +18,7 @@ The following items should be installed in your system:
 6. Angular v15.0.4
 7. Spring Boot v2.6.3
 
-# The following npm packages need to installed for Admin panel UI app to work properly
+## The following npm packages need to be installed for Admin panel UI app to work properly.
 1. npm install --save @angular/material @angular/cdk @angular/animations
 2. npm install --save hammerjs
 3. npm install bootstrap jquery popper.js --save
@@ -32,7 +32,7 @@ Run `npm start` for a dev server. Navigate to `https://localhost:4200/`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
 
 
-# License
+## License
 
 The MediCare application is released under BSD-3-Clause license.
 
