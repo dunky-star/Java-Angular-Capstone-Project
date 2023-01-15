@@ -18,7 +18,7 @@ The following items should be installed in your system:
 + Angular v15.0.4
 + Spring Boot v2.6.3
 
-  ### The following npm packages need to be installed to the Admin panel UI app.
+  ** The following npm packages need to be installed to the Admin panel UI app. **
 	- npm install --save @angular/material @angular/cdk @angular/animations
 	- npm install --save hammerjs
 	- npm install bootstrap jquery popper.js --save
