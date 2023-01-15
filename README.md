@@ -18,13 +18,13 @@ Prerequisites.
 + Angular v15.0.4
 + Spring Boot v2.6.3
 
-**The following npm packages need to be installed to the Admin panel UI app.**
+	**The following npm packages need to be installed to the Admin panel UI app.**
 
--- npm install --save @angular/material @angular/cdk @angular/animations
--- npm install --save hammerjs
--- npm install bootstrap jquery popper.js --save
--- npm install --save-dev @types/jquery
--- npm install -D @types/bootstrap
+	- npm install --save @angular/material @angular/cdk @angular/animations
+	- npm install --save hammerjs
+	- npm install bootstrap jquery popper.js --save
+	- npm install --save-dev @types/jquery
+	- npm install -D @types/bootstrap
 
 ### Running customer UI app
 Run `npm start` for a dev server. Navigate to `https://localhost:4200/`
